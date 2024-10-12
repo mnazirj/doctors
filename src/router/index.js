@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import AdminHomeView from "@/views/dashboards/admin/HomeView.vue";
 
 const routes = [
   {
@@ -16,6 +17,12 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
+  },
+  // Dashboards/Admin routes
+  {
+    path: "/dashboard/admin/",
+    name: "DashboardAdminHome",
+    component: AdminHomeView,
   },
 ];
 
