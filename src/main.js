@@ -50,10 +50,10 @@ const Noir = definePreset(Aura, {
       },
       dark: {
         primary: {
-          color: "{blue.50}",
-          inverseColor: "{blue.950}",
-          hoverColor: "{blue.100}",
-          activeColor: "{blue.200}",
+          color: "{stone.50}",
+          inverseColor: "{stone.950}",
+          hoverColor: "{stone.100}",
+          activeColor: "{stone.200}",
         },
         highlight: {
           background: "rgba(250, 250, 250, .16)",

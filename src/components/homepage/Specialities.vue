@@ -39,12 +39,15 @@ export default {
   data() {
     return {
       items: [
-        { name: "Cardiology", img: require("@/assets/images/1.svg") },
-        { name: "Neurology", img: require("@/assets/images/2.svg") },
-        { name: "Urology", img: require("@/assets/images/3.svg") },
-        { name: "Orthopedic", img: require("@/assets/images/4.svg") },
-        { name: "Dentist", img: require("@/assets/images/5.svg") },
-        { name: "Ophthalmology", img: require("@/assets/images/6.svg") },
+        { name: "Cardiology", img: require("@/assets/images/homepage/1.svg") },
+        { name: "Neurology", img: require("@/assets/images/homepage/2.svg") },
+        { name: "Urology", img: require("@/assets/images/homepage/3.svg") },
+        { name: "Orthopedic", img: require("@/assets/images/homepage/4.svg") },
+        { name: "Dentist", img: require("@/assets/images/homepage/5.svg") },
+        {
+          name: "Ophthalmology",
+          img: require("@/assets/images/homepage/6.svg"),
+        },
       ],
       responsiveOptions: [
         {
