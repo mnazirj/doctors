@@ -22,7 +22,10 @@
           />
         </div>
         <div class="col-lg-4 col-md-4 col-12">
-          <img src="../../assets/images/hero-doctor.png" class="img-fluid" />
+          <img
+            src="../../assets/images/homepage/hero-doctor.png"
+            class="img-fluid"
+          />
         </div>
       </div>
     </div>

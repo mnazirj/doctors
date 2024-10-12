@@ -6,7 +6,7 @@ import Button from "primevue/button";
   <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="../../assets/images/logo.svg" alt="logo" />
+        <img src="../../assets/images/homepage/logo.svg" alt="logo" />
       </a>
       <button
         class="navbar-toggler"

@@ -12,7 +12,7 @@ a{
 }
 .sp-title::before{
     content: "";
-    background: url('../images/heal.svg');
+    background: url('../images/homepage/heal.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100%;
