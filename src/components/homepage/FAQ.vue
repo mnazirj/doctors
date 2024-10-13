@@ -1,6 +1,6 @@
 <template>
-  <section class="py-5">
-    <div class="container">
+  <section class="py-5" id="faq">
+    <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
       <div>
         <h6 class="text-primary">Get Your Answer</h6>
         <h1 class="sp-title">Frequently Asked Questions</h1>

@@ -3,7 +3,7 @@ import Button from "primevue/button";
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+  <nav class="navbar navbar-expand-lg bg-light sticky-top py-3" id="main-nav">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="../../assets/images/homepage/logo.svg" alt="logo" />
@@ -25,16 +25,26 @@ import Button from "primevue/button";
       >
         <ul class="navbar-nav">
           <li class="nav-item px-3">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link article-link" aria-current="page" href="#home"
+              >Home</a
+            >
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="#">Doctors</a>
+            <a class="nav-link article-link" href="#doctors">Doctors</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="#">Blogs</a>
+            <a class="nav-link article-link" id="test" href="#articles"
+              >Articles</a
+            >
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="#">Pharmacy</a>
+            <a class="nav-link article-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link article-link" href="#insurance">Insurance</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link article-link" href="#work">Get Started</a>
           </li>
         </ul>
       </div>

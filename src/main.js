@@ -9,6 +9,7 @@ import { definePreset } from "@primevue/themes";
 import Aura from "@primevue/themes/aura";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
+import "animate.css";
 
 //Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";

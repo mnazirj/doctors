@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-light py-5 best">
-    <div class="container">
+  <section class="bg-light py-5 best" id="articles">
+    <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
       <div class="text-center mb-5">
         <h1 class="sp-title">Latest Articles</h1>
       </div>

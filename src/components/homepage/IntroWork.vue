@@ -1,6 +1,6 @@
 <template>
-  <section class="pt-5 pb-0">
-    <div class="container">
+  <section class="pt-5 pb-0" id="work">
+    <div class="container" data-aos="fade-left" data-aos-duration="1000">
       <div class="row justify-content-center align-items-center">
         <div class="col-5 pb-0">
           <img src="../../assets/images/homepage/doctor.png" width="428" />

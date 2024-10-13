@@ -97,3 +97,11 @@ a{
     background-color: white !important;
    border-radius: 5px !important;
 }
+.p-carousel-prev-button	{
+    background-color: var(--p-primary-color) !important;
+    color: white !important;
+}
+.p-carousel-next-button	{
+    background-color: var(--p-primary-color) !important;
+    color: white !important;
+}
