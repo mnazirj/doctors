@@ -18,11 +18,22 @@ const routes = [
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
   },
-  // Dashboards/Admin routes
+  /* 
+ Dashboard Routes
+ */
+  //Admin Area
   {
     path: "/dashboard/admin/",
     name: "DashboardAdminHome",
     component: AdminHomeView,
+  },
+
+  //Doctor Area
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: () => import("@/views/dashboards/doctor/DashboardView.vue"),
+    children: [],
   },
 ];
 
