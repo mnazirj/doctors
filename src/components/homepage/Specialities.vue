@@ -44,7 +44,10 @@ export default {
         { name: "Urology", img: require("@/assets/images/homepage/3.svg") },
         { name: "Orthopedic", img: require("@/assets/images/homepage/4.svg") },
         { name: "Dentist", img: require("@/assets/images/homepage/5.svg") },
-        { name: "Ophthalmology", img: require("@/assets/images/homepage/6.svg") },
+        {
+          name: "Ophthalmology",
+          img: require("@/assets/images/homepage/6.svg"),
+        },
       ],
       responsiveOptions: [
         {

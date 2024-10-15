@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-light py-5">
+  <section class="bg-light py-5" id="home">
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-8 col-md-8 col-12">
@@ -34,5 +34,4 @@
 
 <script setup>
 import Button from "primevue/button";
-import Image from "primevue/image";
 </script>

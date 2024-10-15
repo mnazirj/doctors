@@ -7,6 +7,10 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    
     
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
@@ -16,5 +20,10 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>

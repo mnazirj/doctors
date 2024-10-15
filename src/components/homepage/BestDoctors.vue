@@ -1,6 +1,6 @@
 <template>
-  <section class="best">
-    <div class="container">
+  <section class="best" id="doctors">
+    <div class="container" data-aos="fade-right" data-aos-duration="1000">
       <h1 class="sp-title font-medium">Best Doctors</h1>
       <Carousel
         :value="doctors"
@@ -54,6 +54,7 @@
 import Button from "primevue/button";
 import Carousel from "primevue/carousel";
 import Tag from "primevue/tag";
+AOS.init();
 </script>
 
 <script>
