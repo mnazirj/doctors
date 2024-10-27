@@ -1,16 +1,17 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-between align-content-between"
+    class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-between align-content-between fixed-top" id="navbar"
   >
     <div class="d-flex justify-content-center ms-4">
       <a class="navbar-brand" href="#"
         ><img
-          src="../../../assets/images/homepage/logo.svg"
+          src="@/assets/images/homepage/logo.svg"
           alt="logo"
           class="brand-icon"
       /></a>
     </div>
-    <div class="w-16 d-flex justify-content-center me-2">
+    <div class="ml-2" ><button type="button" class="btn navbar-toggler-icon border-none " data-bs-toggle="collapse" data-bs-target="#sidebarr"></button></div>
+    <div class=" d-flex justify-content-center me-5 ml-auto">
         <div class=" flex justify-content-center align-items-center me-3 notification">
             <i class="pi pi-bell"></i>
             <div class="notification-number">1</div>
@@ -24,7 +25,7 @@
         >
           <!-- <i class="pi pi-user text-danger rounded-circle nav-icon-user"></i> -->
           <img
-            src="../../../assets/images/homepage/avatar-03.bcd54570.jpg"
+            src="@/assets/images/homepage/avatar-03.bcd54570.jpg"
             alt="user-image"
             class="rounded-circle w-100 h-100"
           />
