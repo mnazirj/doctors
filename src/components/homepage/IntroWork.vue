@@ -2,14 +2,14 @@
   <section class="pt-5 pb-0" id="work">
     <div class="container" data-aos="fade-left" data-aos-duration="1000">
       <div class="row justify-content-center align-items-center">
-        <div class="col-5 pb-0">
+        <div class="col-5 d-none d-lg-block d-md-block pb-0">
           <img src="../../assets/images/homepage/doctor.png" width="428" />
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-md-6 col">
           <h6 class="text-primary font-bold">How it Works</h6>
-          <h1 class="sp-title">4 easy steps to get your solution</h1>
+          <h2 class="sp-title">4 easy steps to get your solution</h2>
           <div class="row">
-            <div class="col">
+            <div class="col-lg-6 col-md-6 col-12">
               <div class="row">
                 <div class="col-3">
                   <img
@@ -26,7 +26,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-6 col-md-6 col-12">
               <div class="row">
                 <div class="col-3">
                   <img
@@ -46,7 +46,7 @@
           </div>
 
           <div class="row">
-            <div class="col">
+            <div class="col-lg-6 col-md-6 col-12">
               <div class="row">
                 <div class="col-3">
                   <img

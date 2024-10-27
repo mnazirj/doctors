@@ -36,7 +36,7 @@ const routes = [
     children: [
       {
         path: "home",
-        name: "home",
+        name: "doc.home",
         component: () => import("@/components/dashboard/doctor/Summary.vue"),
       },
     ],
