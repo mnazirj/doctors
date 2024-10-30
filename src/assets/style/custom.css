@@ -77,11 +77,13 @@ a{
 
 /* -------------------- */
 /* Mohammad Alqahf start Section */
+
 a {
     color: inherit;
 }
 
 /* Navbar classes */
+
 @media (max-width: 640px)   {
     .sm-w-25{
         width: 25% !important;
@@ -259,9 +261,7 @@ a {
     width: calc(100% - 14.6rem);
     margin-left: 15.6rem;
 }
-.w-full{
-    height: 100vh;
-}
+
 
 /* --------------------Home View------------------------------- */
 /* cards */

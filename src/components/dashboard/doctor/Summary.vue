@@ -55,10 +55,13 @@
         </Card>
       </div>
     </div>
-    <div class="col-12">
-      <h3>Weekly Overview</h3>
-      <div class="w-100">
-        <Chart type="line" :data="chartData" />
+    <h3>Weekly Overview</h3>
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-12">
+        <Chart type="line" :data="patients" />
+      </div>
+      <div class="col-lg-6 col-md-12 col-12">
+        <Chart type="bar" :data="appointments" />
       </div>
     </div>
   </div>
@@ -73,23 +76,47 @@ import Chart from "primevue/chart";
 export default {
   data() {
     return {
-      chartData: {
-        labels: ["M", "T", "W", "T", "F,", "S", "S"],
+      patients: {
+        labels: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
         datasets: [
           {
             label: "Patients",
-            data: [50, 40, 65, 55, 60, 35, 70],
-            backgroundColor: [
-              "rgba(59,130,246,.7)",
-              "rgba(14,165,233,.7)",
-              "rgba(6,182,212,.7)",
-            ],
-            borderColor: [
-              "rgb(59,130,246,.7)",
-              "rgb(14,165,233,.7)",
-              "rgb(6,182,212,.7)",
-            ],
+            data: [50, 40, 65, 55, 60, 39, 70],
+
+            borderColor: getComputedStyle(
+              document.documentElement
+            ).getPropertyValue("--p-blue-600"),
+            fill: true,
             tension: 0.4,
+          },
+        ],
+      },
+      appointments: {
+        labels: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        datasets: [
+          {
+            label: "Appointments",
+            data: [80, 45, 65, 32, 75, 65, 91],
+
+            backgroundColor: getComputedStyle(
+              document.documentElement
+            ).getPropertyValue("--p-blue-600"),
           },
         ],
       },

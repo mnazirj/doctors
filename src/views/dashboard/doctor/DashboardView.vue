@@ -78,6 +78,7 @@
           class="ms-2 mb-2"
           @click="changeSize"
         />
+
         <router-view />
       </main>
     </div>
