@@ -147,3 +147,27 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+.table-continer div table tbody tr td:has(img)  {
+    text-align: end;
+}
+.table-continer div table tbody tr td:has(span)  {
+    text-align: start;
+}
+.table-continer div table tbody tr td img {
+    width: 3rem;
+    height: 3rem;
+}
+.table-continer div table tbody tr td span {
+    margin-left: 1rem;
+}
+.modal-body  {
+    text-align: start;
+
+}
+.modal-body p {
+    margin: 1rem;
+}
+
+</style>

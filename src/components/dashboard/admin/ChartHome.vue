@@ -145,3 +145,20 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@media (min-width:786px){
+    .chart-1 ,.chart-2 {
+        width: 45%;
+    }
+}
+@media (max-width:786px){
+    .chart-1 ,.chart-2 {
+        width: 80%;
+        height: 25rem;
+    }
+}
+.chart-1 , .chart-2 {
+    height: 25rem;
+}
+</style>

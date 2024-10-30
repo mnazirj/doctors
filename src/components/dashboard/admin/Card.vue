@@ -34,3 +34,82 @@ export default {
     },
 }
 </script>
+
+
+<style scoped>
+@media  (max-width:786px) {
+    .card{
+        width: 80%;
+        min-width: 80%;
+    }
+    
+}
+@media  (min-width:786px) {
+    .card{
+        width: 40%;
+        min-width: 40%;
+    }
+    
+}
+@media  (min-width:1024px) {
+    .card{
+        width: 20%;
+        min-width: 20%;
+    }
+    
+}
+.card {
+   height:10rem;
+}
+.card i{
+   font-size: 4rem;
+}
+.card span {
+    font-size: 2rem;
+}
+.card progress {
+    border: none;
+    border-radius: 7px;   
+}
+.card progress::-moz-progress-bar {
+    background: lightblue;
+    border: none;
+    border-radius: 20px;
+  }
+  
+.card progress::-webkit-progress-value {
+    background: rgb(0, 58, 85);
+    border: none;
+    border-radius: 7px; 
+  }
+  
+.card progress::-webkit-progress-bar {  
+    background: rgb(218, 218, 218);
+    border: none;
+    border-radius: 7px;
+}
+.card-1 i{
+    color: #ffbb00;
+}
+.card-1 progress::-webkit-progress-value {
+    background:#ffbb00;
+}
+.card-2 i{
+    color: #00ff84;
+}
+.card-2 progress::-webkit-progress-value {
+    background: #00ff84;
+}
+.card-3 i{
+    color: #00b7ff;
+}
+.card-3 progress::-webkit-progress-value {
+    background: #00b7ff;
+}
+.card-4 i {
+    color: #8f004f;
+}
+.card-4 progress::-webkit-progress-value {
+    background: #8f004f;
+}
+</style>

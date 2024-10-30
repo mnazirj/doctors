@@ -75,3 +75,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.collapse:not(.show){
+    display: none !important;
+}
+</style>

@@ -1,5 +1,10 @@
 <template>
+   
+   
     <div class="table-continer   d-flex flex-wrap justify-content-center align-content-center shadow shadow-3 ms-auto me-auto pt-4 pb-4 mt-4 mb-4 rounded rounded-4">
+        <div class="d-flex justify-content-center align-items-center w-100 mt-3 mb-3">
+            <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
+        </div>
         <div class="table-responsive">
             <table class="table table-hover  ">
             <thead>
@@ -27,7 +32,7 @@
             </tbody>
         </table>
         </div>
-       <Pagination :data="appointments" :itemsPerPage="5" @updatePaginatedData="handlePaginatedDataUpdate" />
+       <Pagination :data="filteredData" :itemsPerPage="5" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
        
     </div>
 </template>
@@ -40,6 +45,7 @@ export default{
     },
     data() {
         return {
+            searchInput: '',
             paginatedData:[],
             appointments:[
                 {
@@ -223,7 +229,7 @@ export default{
                     patientName:'Mhmd Mahmmoud',
                     doctorName:'Ahmad AlAhmad',
                     specialitie:'Playing in Hearts',
-                    date: '10/1/2024 10:00 AM',
+                    date: '28/5/2010 10:00 AM',
                     status:false,
                 },
                 {
@@ -231,7 +237,7 @@ export default{
                     patientName:'Dina Mahmmoud',
                     doctorName:'Ahmad AlAhmad',
                     specialitie:'Playing in Hearts',
-                    date: '10/1/2024 10:00 AM',
+                    date: '10/1/2022 10:00 AM',
                     status:false,
                 },
                 {
@@ -255,7 +261,7 @@ export default{
                     patientName:'Bo Mahmmoud',
                     doctorName:'Ahmad AlAhmad',
                     specialitie:'Playing in Hearts',
-                    date: '10/1/2024 10:00 AM',
+                    date: '25/4/2023 10:00 AM',
                     status:false,
                 },
                 {
@@ -271,7 +277,7 @@ export default{
                     patientName:'Mohammad Mahmmoud',
                     doctorName:'Ahmad AlAhmad',
                     specialitie:'Playing in Hearts',
-                    date: '10/1/2024 10:00 AM',
+                    date: '10/2/2024 10:00 AM',
                     status:false,
                 },
                 {
@@ -279,7 +285,7 @@ export default{
                     patientName:'Mohammad Mahmmoud',
                     doctorName:'Ahmad AlAhmad',
                     specialitie:'Playing in Hearts',
-                    date: '10/1/2024 10:00 AM',
+                    date: '12/1/2024 10:00 AM',
                     status:false,
                 },
                 {
@@ -293,7 +299,24 @@ export default{
             ],
         }
     },
+    computed:{
+        filteredData(){
+            if(!this.searchInput){
+                return this.appointments;
+            }
+            return this.appointments.filter((item)=> 
+                item.patientName.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                item.doctorName.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                item.specialitie.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                String(item.date).includes(this.searchInput) ||
+                String(item.status).includes(this.searchInput)
+            );
+        }
+    },
     methods:{
+        resetToFirstPage(){
+            this.$refs.pagination.currentPage = 1;
+        }, 
         handlePaginatedDataUpdate(newPaginatedData){
             this.paginatedData = newPaginatedData;
         }

@@ -85,6 +85,22 @@ const routes = [
         meta:{
           breadcrumb:'Website Settings',
         }
+      },
+      {
+        path:'/dashboard/admin/profile',
+        name:'DashboardAdminProfile',
+        component: () => import('@/components/dashboard/admin/Profile.vue'),
+        meta:{
+          breadcrumb:'Profile',
+        }
+      },
+      {
+        path:'/dashboard/admin/settings',
+        name: 'DashboardAdminSettings',
+        component: () => import('@/components/dashboard/admin/Settings.vue'),
+        meta:{
+          breadcrumb:'Settings',
+        }
       }
     ]
   },

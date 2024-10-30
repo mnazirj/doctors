@@ -49,3 +49,16 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+.container-fluid{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+}
+/* table */
+.page-link{
+    color: #005e8a;
+}
+</style>

@@ -2,55 +2,30 @@
   <div class="tables w-100 d-flex justify-content-around flex-wrap mt-4 mb-4">
     <div class="table-1 rounded rounded-4 shadow shadow-3 mt-4 mb-4">
       <table
-        class="w-100 table table-hover tablee align-middle table-responsive caption-top"
+        class="w-100 table table-hover table-home align-middle table-responsive caption-top"
       >
         <caption class="text-center p-2 pt-3 pb-1">
           Doctors List
         </caption>
         <thead class="">
           <tr class="">
-            <th class="" scope="col">Doctor Image</th>
-            <th class="" scope="col">Doctor Name</th>
+            <th class="" scope="col" colspan="2">Doctor Name</th>
             <th class="" scope="col">Speciality</th>
             <th class="" scope="col">Reviews</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="roww table-group-divider">
+          <tr class="roww " v-for="doctor in doctors" :key="doctor.id">
             <td class="">
               <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
+                :src="doctor.img"
                 alt="doctor-image"
                 class="table-img"
               />
             </td>
-            <td class="">Mohammad Mahmmoud</td>
-            <td class="">Playing In Hearts</td>
-            <td class="" v-html="createRate(3.8)"></td>
-          </tr>
-          <tr class="roww">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Salem Almosalm</td>
-            <td class="">Playing In things</td>
-            <td class="" v-html="createRate(1.8)"></td>
-          </tr>
-          <tr class="roww">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-04.4c576192.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Sara Alsrsara</td>
-            <td class="">Playing In eyes</td>
-            <td class="" v-html="createRate(0.5)"></td>
+            <td class="">{{ doctor.name }}</td>
+            <td class="">{{ doctor.speciality }}</td>
+            <td class="" v-html="createRate(doctor.review)"></td>
           </tr>
         </tbody>
       </table>
@@ -65,84 +40,23 @@
         </caption>
         <thead>
           <tr class="head-row">
-            <th class="" scope="col">Patient Image</th>
-            <th class="" scope="col">Patient Name</th>
+            <th class="" scope="col" colspan="2">Patient Name</th>
             <th class="" scope="col">Phone</th>
             <th class="" scope="col">Last Appointment</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="">
+          <tr class=""  v-for="paitent in paitents" :key="paitent.id">
             <td class="">
               <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
+                :src="paitent.img"
                 alt="doctor-image"
                 class="table-img"
               />
             </td>
-            <td class="">Mohammad Mahmmoud</td>
-            <td class="">+963 958 147 687</td>
-            <td class="">11/12/2024 10:00 AM</td>
-          </tr>
-          <tr class="">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-04.4c576192.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Salem Almosalm</td>
-            <td class="">+963 142 145 897</td>
-            <td class="">4/8/2023 02:00 PM</td>
-          </tr>
-          <tr class="">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Sara Alsrsara</td>
-            <td class="">+963 978 895 159</td>
-            <td class="">30/1/2023 01:00 PM</td>
-          </tr>
-          <tr class="">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Sara Alsrsara</td>
-            <td class="">+963 978 895 159</td>
-            <td class="">30/1/2023 01:00 PM</td>
-          </tr>
-          <tr class="">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Sara Alsrsara</td>
-            <td class="">+963 978 895 159</td>
-            <td class="">30/1/2023 01:00 PM</td>
-          </tr>
-          <tr class="">
-            <td class="">
-              <img
-                src="@/assets/images/homepage/avatar-01.85a7d768.jpg"
-                alt="doctor-image"
-                class="table-img"
-              />
-            </td>
-            <td class="">Sara Alsrsara</td>
-            <td class="">+963 978 895 159</td>
-            <td class="">30/1/2023 01:00 PM</td>
+            <td class="">{{ paitent.name}}</td>
+            <td class="">{{ paitent.phone }}</td>
+            <td class="">{{ paitent.lastAppointment }}</td>
           </tr>
         </tbody>
       </table>
@@ -152,6 +66,77 @@
 
 <script>
 export default {
+  data() {
+    return {
+      paitents:[
+        {
+          id:1,
+          name: "	Mohammad Mahmmoud",
+          phone:"+963 978 521 654",
+          lastAppointment: "11/10/2024",
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:2,
+          name: "	Mohammad Mahmmoud",
+          phone:"+963 978 521 654",
+          lastAppointment: "11/10/2024",
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:3,
+          name: "	Mohammad Mahmmoud",
+          phone:"+963 978 521 654",
+          lastAppointment: "11/10/2024",
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:4,
+          name: "	Mohammad Mahmmoud",
+          phone:"+963 978 521 654",
+          lastAppointment: "11/10/2024",
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:5,
+          name: "	Mohammad Mahmmoud",
+          phone:"+963 978 521 654",
+          lastAppointment: "11/10/2024",
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+      ],
+      doctors:[
+        {
+          id:1,
+          name:"Salem Almosalm",
+          speciality:"Neurology",
+          review: 2.5,
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:2,
+          name:"Salem Almosalm",
+          speciality:"Neurology",
+          review: 2.5,
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:3,
+          name:"Salem Almosalm",
+          speciality:"Neurology",
+          review: 2.5,
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+        {
+          id:4,
+          name:"Salem Almosalm",
+          speciality:"Neurology",
+          review: 2.5,
+          img: require('@/assets/images/homepage/avatar-01.85a7d768.jpg')
+        },
+      ]
+    }
+  },
   methods: {
     createRate(rateNumber) {
       let fullStar = `<i class="fa-solid fa-star text-warning  full-star"></i>`;
@@ -177,3 +162,37 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@media (max-width:1024px){
+    .table-1 , .table-2{
+        width: 90%;
+        
+    } 
+    .tables {
+        flex-direction: column;
+        align-items: center ;
+    }
+}
+@media (min-width:1024px) {
+    .table-1 , .table-2{
+        width: 46%;
+    } 
+}
+.table-1 , .table-2 {
+    padding: 1rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    max-height: 30rem;
+}
+
+.table-1 table thead tr th ,.table-2 table thead tr th   { 
+    background: #e1e0e0;
+    text-align: center; 
+    padding: 1.5rem;
+}
+.table-1 table tbody tr td , .table-2 table tbody tr td {
+    text-align: center;
+    margin: 0rem 1.5rem;
+}
+</style>
