@@ -5,17 +5,16 @@
         <h1 class="sp-title">Latest Articles</h1>
       </div>
       <div class="row">
-        <div class="col-lg-6 mb-4" v-for="article in articles" :key="article">
+        <div
+          class="col-lg-6 col-md-6 col-12 mb-4"
+          v-for="article in articles"
+          :key="article"
+        >
           <Card>
             <template #content>
               <div class="row">
-                <div class="col-4 me-2">
-                  <img
-                    :src="article.cover"
-                    class="rounded"
-                    width="200"
-                    height="200"
-                  />
+                <div class="col-lg-4 col-md-4 col-12">
+                  <img :src="article.cover" class="rounded img-fluid w-full" />
                 </div>
                 <div class="col">
                   <div>

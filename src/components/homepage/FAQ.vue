@@ -6,10 +6,10 @@
         <h1 class="sp-title">Frequently Asked Questions</h1>
       </div>
       <div class="row">
-        <div class="col">
-          <img src="../../assets/images/homepage/faq.png" class="img-fuid" />
+        <div class="col d-none d-lg-block">
+          <img src="../../assets/images/homepage/faq.png" class="img-fluid" />
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-md-6">
           <div class="col" v-for="item in faq" :key="item.id">
             <Panel
               :header="item.question"

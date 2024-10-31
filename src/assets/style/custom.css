@@ -7,10 +7,13 @@
     --subtitle-color: #374151;
 }
 
-
 *{
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+    /* outline: 1px red solid; */
+}
+html,body{
+    height: 100%;
 }
 a{
     text-decoration: none !important;
@@ -74,12 +77,13 @@ a{
 
 /* -------------------- */
 /* Mohammad Alqahf start Section */
+
 a {
     color: inherit;
 }
 
 /* Navbar classes */
-/* @media (max-width: 640px)   {
+@media (max-width: 640px)   {
     .sm-w-25{
         width: 25% !important;
     }
@@ -282,9 +286,7 @@ a {
     width: calc(100% - 14.6rem);
     margin-left: 15.6rem;
 }
-.w-full{
-    height: 100vh;
-}
+
 
 /* --------------------Home View------------------------------- */
 /* cards */

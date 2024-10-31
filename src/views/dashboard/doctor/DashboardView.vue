@@ -2,12 +2,14 @@
   <div class="container-fluid">
     <div class="row flex-nowrap">
       <div class="col-auto px-0">
-        <div id="sidebar" class="collapse collapse-horizontal show border-end">
+        <div
+          id="sidebar"
+          class="collapse collapse-horizontal show border-end h-100"
+        >
           <div
             id="sidebar-nav"
-            class="list-group border-0 shadow text-sm-start min-vh-100"
+            class="list-group border-0 shadow text-sm-start min-vh-100 h-100"
           >
-            <!-- Profile Showcase -->
             <div class="profile-showcase p-3 mb-3">
               <div class="d-flex align-items-center flex-column mb-3">
                 <div>
@@ -37,12 +39,15 @@
             <a
               v-for="link in links"
               :key="link.id"
-              href="#"
+              :href="link.route"
               class="list-group-item border-0 ms-4 me-2 rounded mb-2"
               :class="[
-                { active: $route.path == link.route },
-                { hover: $route.path != link.route },
-                { 'text-dark-emphasis': $route.path != link.route },
+                { active: $route.matched[0].children[0].path == link.route },
+                { hover: $route.matched[0].children[0].path != link.route },
+                {
+                  'text-dark-emphasis':
+                    $route.matched[0].children[0].path != link.route,
+                },
               ]"
               data-bs-parent="#sidebar"
             >
@@ -62,15 +67,18 @@
           </div>
         </div>
       </div>
-      <main class="col ps-md-2 pt-2">
+
+      <main role="main" class="col ps-md-2 pt-2 me-0 me-lg-5 me-md-5">
         <Button
           data-bs-target="#sidebar"
           data-bs-toggle="collapse"
           size="small"
           rounded
           icon="pi pi-list"
-          class="ms-2"
+          class="ms-2 mb-2"
+          @click="changeSize"
         />
+
         <router-view />
       </main>
     </div>
@@ -89,43 +97,43 @@ export default {
         {
           id: 1,
           name: "Dashboard",
-          route: "/dashboard",
+          route: "home",
           icon: "fas fa-shapes",
         },
         {
           id: 2,
           name: "Appointments",
-          route: "#",
+          route: "appointments",
           icon: "fas fa-address-book",
         },
         {
           id: 3,
           name: "Available Timings",
-          route: "#",
+          route: "available-time",
           icon: "fas fa-calendar-check",
         },
         {
           id: 4,
           name: "My Patients",
-          route: "#",
+          route: "patients",
           icon: "fas fa-hospital-user",
         },
         {
           id: 5,
           name: "Reviews",
-          route: "#",
+          route: "reviews",
           icon: "fas fa-bullhorn",
         },
         {
           id: 6,
           name: "Profile Settings",
-          route: "#",
+          route: "profile",
           icon: "fas fa-address-card",
         },
         {
           id: 7,
           name: "Change Password",
-          route: "#",
+          route: "password",
           icon: "fas fa-key",
         },
       ],

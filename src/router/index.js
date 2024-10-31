@@ -22,61 +22,62 @@ const routes = [
  */
   //Admin Area
   {
-    // path: "/dashboard/admin",
+    path: "/dashboard/admin",
     name: "DashboardAdmin",
-    component: ()=> import('@/views/dashboard/admin/DashboardView.vue'),
-    redirect: { name: "DashboardAdminHome" },
+    component: () => import("@/views/dashboard/admin/DashboardView.vue"),
     meta: {
-      breadcrumb:"Dashboard",
+      breadcrumb: "Dashboard",
     },
     children: [
       {
-        path:"/dashboard/admin/home",
-        name:"DashboardAdminHome",
-        component:()=> import('@/views/dashboard/admin/HomeView.vue'),
+        path: "/dashboard/admin/home",
+        name: "DashboardAdminHome",
+        component: () => import("@/views/dashboard/admin/HomeView.vue"),
         meta: {
-          breadcrumb:"Home",
+          breadcrumb: "Home",
         },
       },
       {
-        path:"/dashboard/admin/appointments",
-        name:"DashboardAdminAppointments",
-        component: ()=> import('@/components/dashboard/admin/Appointments.vue'),
-        meta:{
-          breadcrumb:"Appointments",
-        }
+        path: "/dashboard/admin/appointments",
+        name: "DashboardAdminAppointments",
+        component: () =>
+          import("@/components/dashboard/admin/Appointments.vue"),
+        meta: {
+          breadcrumb: "Appointments",
+        },
       },
       {
-        path:"/dashboard/admin/specialities",
-        name:"DashboardAdminSpecialities",
-        component: ()=> import('@/components/dashboard/admin/Specialities.vue'),
-        meta:{
-          breadcrumb:"Specialities",
-        }
+        path: "/dashboard/admin/specialities",
+        name: "DashboardAdminSpecialities",
+        component: () =>
+          import("@/components/dashboard/admin/Specialities.vue"),
+        meta: {
+          breadcrumb: "Specialities",
+        },
       },
       {
-        path:'/dashboard/admin/doctors',
-        name:"DashboardAdminDoctors",
-        component: ()=> import('@/components/dashboard/admin/Doctors.vue'),
-        meta:{
-          breadcrumb:"Doctors",
-        }
+        path: "/dashboard/admin/doctors",
+        name: "DashboardAdminDoctors",
+        component: () => import("@/components/dashboard/admin/Doctors.vue"),
+        meta: {
+          breadcrumb: "Doctors",
+        },
       },
       {
-        path:'/dashboard/admin/paitents',
-        name:"DashboardAdminPaitents",
-        component: ()=> import('@/components/dashboard/admin/Patients.vue'),
-        meta:{
-          breadcrumb:"Paitents",
-        }
+        path: "/dashboard/admin/paitents",
+        name: "DashboardAdminPaitents",
+        component: () => import("@/components/dashboard/admin/Patients.vue"),
+        meta: {
+          breadcrumb: "Paitents",
+        },
       },
       {
-        path:'/dashboard/admin/reviews',
-        name:"DashboardAdminReviews",
-        component: ()=> import('@/components/dashboard/admin/Reviews.vue'),
-        meta:{
-          breadcrumb:"Reviews",
-        }
+        path: "/dashboard/admin/reviews",
+        name: "DashboardAdminReviews",
+        component: () => import("@/components/dashboard/admin/Reviews.vue"),
+        meta: {
+          breadcrumb: "Reviews",
+        },
       },
       {
         path:'/dashboard/admin/website-settings',
@@ -85,35 +86,20 @@ const routes = [
         meta:{
           breadcrumb:'Website Settings',
         }
-      },
-      {
-        path:'/dashboard/admin/profile',
-        name:'DashboardAdminProfile',
-        component: () => import('@/components/dashboard/admin/Profile.vue'),
-        meta:{
-          breadcrumb:'Profile',
-        }
-      },
-      {
-        path:'/dashboard/admin/settings',
-        name: 'DashboardAdminSettings',
-        component: () => import('@/components/dashboard/admin/Settings.vue'),
-        meta:{
-          breadcrumb:'Settings',
-        }
       }
     ]
   },
 
   //Doctor Area
   {
-    path: "/dashboard",
+    path: "/doctor/dashboard",
     name: "dashboard",
     component: () => import("@/views/dashboard/doctor/DashboardView.vue"),
+
     children: [
       {
         path: "home",
-        name: "home",
+        name: "doc.home",
         component: () => import("@/components/dashboard/doctor/Summary.vue"),
       },
     ],
