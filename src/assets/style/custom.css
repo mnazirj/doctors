@@ -192,84 +192,18 @@ a {
 /* Sidebar classes */
 
 
-#sidebarr{
-    background: linear-gradient(to right ,#004e72 ,#8dd5f6);
-    width: 14.6rem;
-    min-width: 14.6rem;
-    height: 100vh;
-    transition: all 0.2s ease-in-out ;
-    position: fixed;
-    display: flex;
-    top: 4rem;
-    z-index: 5;
-    overflow-y: auto;
-}
-#sidebarr:not(.expand) {
-    width:4.6rem;
-    min-width:4.6rem;
-}
-#sidebarr div .sidebar-menu .sidebar-item {
-    margin: 0.7rem 0px ;
-    padding: 1rem;
-}
-#sidebarr:not(.expand) div .sidebar-menu .sidebar-item {
-    display: flex;
-    justify-content: center;
-    margin: 0.7rem 0px ;
-    padding: 1rem 0.5rem;
-}
-
-#sidebarr div .sidebar-menu .sidebar-item i{
-    font-size: 18px;
-    margin-right: 1rem;
-    
-} 
-#sidebarr:not(.expand) div .sidebar-menu .sidebar-item i{
-    font-size: 20px;
-    padding:  0px;
-    margin: 0px;
-}
-
-#sidebarr div .sidebar-menu .sidebar-item span{
-    font-size: 18px;
-}
-#sidebarr:not(.expand) div .sidebar-menu .sidebar-item span{
-    display: none;
-}
-
-#sidebarr div .sidebar-menu{
-    list-style-type: none;
-}
-#sidebarr:not(.expand) div .sidebar-menu{
-}
-
-.sidebar-item:hover{
-    background-color: #0087c6;
-    color: #f2f2f2;
-    cursor: pointer;
-}
-#sidebarr div .sidebar-menu .sidebar-item:is(.active){
-    color: #f0f0f0;
-    background-color: #004362;
-}
-
-
-#sidebarr .toggle-btn {
-    width: 0.7rem;
-    min-width: 0.7rem;
-}
-#sidebarr .toggle-btn button i{
-    font-size: 18px;
-}
 
 
 /* -------------------Views classes----------------------- */
-.main {
+/* .main {
+    min-height: calc(100% - 4rem);
+    margin-top: 5rem;
+} */
+.container-fluid {
     min-height: calc(100% - 4rem);
     margin-top: 5rem;
 }
-
-#sidebarr:is(.expand):not(.show) + .main{
+/* #sidebarr:is(.expand):not(.show) + .main{
     width: calc(100% - 1rem);
     margin-left: 2rem ;
 }
@@ -285,7 +219,7 @@ a {
 #sidebarr + .main{
     width: calc(100% - 14.6rem);
     margin-left: 15.6rem;
-}
+} */
 
 
 /* --------------------Home View------------------------------- */

@@ -22,24 +22,24 @@ const routes = [
  */
   //Admin Area
   {
-    path: "/dashboard/admin",
-    name: "DashboardAdmin",
+    path: "/admin/dashboard",
+    name: "dash.admin",
     component: () => import("@/views/dashboard/admin/DashboardView.vue"),
     meta: {
       breadcrumb: "Dashboard",
     },
     children: [
       {
-        path: "/dashboard/admin/home",
-        name: "DashboardAdminHome",
+        path: "home",
+        name: "admin.home",
         component: () => import("@/views/dashboard/admin/HomeView.vue"),
         meta: {
           breadcrumb: "Home",
         },
       },
       {
-        path: "/dashboard/admin/appointments",
-        name: "DashboardAdminAppointments",
+        path: "appointments",
+        name: "admin.appointments",
         component: () =>
           import("@/components/dashboard/admin/Appointments.vue"),
         meta: {
@@ -47,8 +47,8 @@ const routes = [
         },
       },
       {
-        path: "/dashboard/admin/specialities",
-        name: "DashboardAdminSpecialities",
+        path: "specialities",
+        name: "admin.specialities",
         component: () =>
           import("@/components/dashboard/admin/Specialities.vue"),
         meta: {
@@ -56,35 +56,51 @@ const routes = [
         },
       },
       {
-        path: "/dashboard/admin/doctors",
-        name: "DashboardAdminDoctors",
+        path: "doctors",
+        name: "admin.doctors",
         component: () => import("@/components/dashboard/admin/Doctors.vue"),
         meta: {
           breadcrumb: "Doctors",
         },
       },
       {
-        path: "/dashboard/admin/paitents",
-        name: "DashboardAdminPaitents",
+        path: "paitents",
+        name: "admin.patients",
         component: () => import("@/components/dashboard/admin/Patients.vue"),
         meta: {
           breadcrumb: "Paitents",
         },
       },
       {
-        path: "/dashboard/admin/reviews",
-        name: "DashboardAdminReviews",
+        path: "reviews",
+        name: "admin.reviews",
         component: () => import("@/components/dashboard/admin/Reviews.vue"),
         meta: {
           breadcrumb: "Reviews",
         },
       },
       {
-        path:'/dashboard/admin/website-settings',
-        name:'DashboardAdminWebsiteSettings',
+        path:'website-settings',
+        name:'admin.websitSettings',
         component: ()=> import('@/components/dashboard/admin/WebsitSettings.vue'),
         meta:{
           breadcrumb:'Website Settings',
+        }
+      },
+      {
+        path:'profile',
+        name:'admin.profile',
+        component: ()=> import('@/components/dashboard/admin/Profile.vue'),
+        meta:{
+          breadcrumb:'Profile',
+        }
+      },
+      {
+        path:'settings',
+        name:'admin.settings',
+        component: () => import('@/components/dashboard/admin/Settings.vue'),
+        meta:{
+          breadcrumb:'Settings',
         }
       }
     ]

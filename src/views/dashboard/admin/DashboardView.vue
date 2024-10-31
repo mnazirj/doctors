@@ -1,8 +1,8 @@
 <template>
   <Navbar />
-  <div class="container-fluid d-flex">
+  <div class="container-fluid row ">
     <Sidebar />
-    <div class="main d-flex flex-wrap">
+    <div class="main col">
         <div class="w-100">
             <h1 class="w-100">Welcome Admin !</h1>
       <nav aria-label="breadcrumb">

@@ -61,11 +61,11 @@
           />
         </a>
         <ul class="dropdown-menu">
-          <router-link :to="{name:'DashboardAdminProfile'}"><li class="dropdown-item">
+          <router-link :to="{name:'admin.profile'}"><li class="dropdown-item">
               <i class="pi pi-user me-2"></i><span>Profile</span>
           </li></router-link>
           
-          <router-link :to="{name:'DashboardAdminSettings'}" > <li class="dropdown-item">  
+          <router-link :to="{name:'admin.settings'}" > <li class="dropdown-item">  
               <i class="pi pi-cog me-2"></i><span>Settings</span>
           </li></router-link>
           
