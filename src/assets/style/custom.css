@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 :root{
@@ -6,6 +6,7 @@
     --icon-color: #64748b;
     --subtitle-color: #374151;
 }
+
 
 *{
     font-family: "Roboto", sans-serif;
@@ -18,12 +19,26 @@ html,body{
 a{
     text-decoration: none !important;
 }
+.font-kanit, .font-kanit>.p-tag-label  {
+    font-family: "Kanit", sans-serif !important;
+}
 .text-primary{
     color: var(--p-primary-color) !important;
+}
+.text-second{
+    color: var(--subtitle-color) !important;
+}
+.font-12{
+    font-size: 12px;
+}
+.font-14{
+    font-size: 14px;
 }
 .sp-title{
     display: inline-block;
     position: relative;
+    font-family: "Kanit", sans-serif;
+
 }
 .sp-title::before{
     content: "";
@@ -199,10 +214,10 @@ a {
     min-height: calc(100% - 4rem);
     margin-top: 5rem;
 } */
-.container-fluid {
+/* .container-fluid {
     min-height: calc(100% - 4rem);
     margin-top: 5rem;
-}
+} */
 /* #sidebarr:is(.expand):not(.show) + .main{
     width: calc(100% - 1rem);
     margin-left: 2rem ;
@@ -465,6 +480,9 @@ a {
 
 /* End Settings */
 /* Mohammad Alqahf End Section */
+.border-color{
+    border: 2px solid var(--p-primary-color) !important;
+}
 .styled-img{
     background-color: var(--p-blue-100);
     padding: 1rem;
@@ -499,4 +517,66 @@ a {
 .p-carousel-next-button	{
     background-color: var(--p-primary-color) !important;
     color: white !important;
+}
+.p-datatable-thead,.p-datatable-header-cell	{
+    background:  url('../images/homepage/bg-doc.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    color: white !important;
+}
+.p-datatable-sort-icon	{
+    color: white !important;
+}
+.p-paginator-page.p-paginator-page-selected{
+    background: var(--p-primary-color) !important;
+}
+.outlined:not(:hover){
+    background: none !important;
+    border: 2px solid !important;
+    transition: .7s ease-in-out;
+}
+.outlined:not(:hover):is(.not-hover-card){
+    background: none !important;
+    border: 2px solid var(--p-primary-color) !important;
+    transition: .7s ease-in-out;
+}
+.outlined:not(:hover):is(.not-hover){
+    background: none !important;
+    border: 2px solid !important;
+    transition: .7s ease-in-out;
+    border-color: var(--p-primary-color) !important;
+}
+.outlined:hover:not(.not-hover){
+    border: 2px solid !important;
+    color: white !important;
+    transition: .9s;
+}
+.outlined:hover:is(.not-hover){
+    border: 2px solid !important;
+    color: white !important;
+    background: var(--p-primary-color);
+    transition: .9s;
+    .p-chip-icon, .p-chip-remove-icon{
+        color: white !important;
+        transition: .9s;
+    }
+}
+.outlined:hover:is(.not-hover-card){
+    border: 2px solid !important;
+    color: white !important;
+    background: var(--p-primary-color);
+    transition: .9s;
+    i,small{
+        color: white !important;
+    }
+    .bg-body-tertiary{
+        background-color: transparent !important;
+    }
+}
+.p-chip-icon	{
+    color: var(--p-primary-color) !important;
+    transition: .7s;
+}
+.p-chip-remove-icon	{
+    color: var(--p-red-600) !important;
 }

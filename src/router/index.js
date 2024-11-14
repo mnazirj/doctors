@@ -80,30 +80,31 @@ const routes = [
         },
       },
       {
-        path:'website-settings',
-        name:'admin.websitSettings',
-        component: ()=> import('@/components/dashboard/admin/WebsitSettings.vue'),
-        meta:{
-          breadcrumb:'Website Settings',
-        }
+        path: "website-settings",
+        name: "admin.websitSettings",
+        component: () =>
+          import("@/components/dashboard/admin/WebsitSettings.vue"),
+        meta: {
+          breadcrumb: "Website Settings",
+        },
       },
       {
-        path:'profile',
-        name:'admin.profile',
-        component: ()=> import('@/components/dashboard/admin/Profile.vue'),
-        meta:{
-          breadcrumb:'Profile',
-        }
+        path: "profile",
+        name: "admin.profile",
+        component: () => import("@/components/dashboard/admin/Profile.vue"),
+        meta: {
+          breadcrumb: "Profile",
+        },
       },
       {
-        path:'settings',
-        name:'admin.settings',
-        component: () => import('@/components/dashboard/admin/Settings.vue'),
-        meta:{
-          breadcrumb:'Settings',
-        }
-      }
-    ]
+        path: "settings",
+        name: "admin.settings",
+        component: () => import("@/components/dashboard/admin/Settings.vue"),
+        meta: {
+          breadcrumb: "Settings",
+        },
+      },
+    ],
   },
 
   //Doctor Area
@@ -111,12 +112,28 @@ const routes = [
     path: "/doctor/dashboard",
     name: "dashboard",
     component: () => import("@/views/dashboard/doctor/DashboardView.vue"),
-
     children: [
       {
         path: "home",
         name: "doc.home",
         component: () => import("@/components/dashboard/doctor/Summary.vue"),
+      },
+      {
+        path: "appointments",
+        name: "doc.appointments",
+        component: () =>
+          import("@/components/dashboard/doctor/appointments.vue"),
+      },
+      {
+        path: "available-time",
+        name: "doc.availabletime",
+        component: () =>
+          import("@/components/dashboard/doctor/available-timing.vue"),
+      },
+      {
+        path: "patients",
+        name: "doc.patients",
+        component: () => import("@/components/dashboard/doctor/patients.vue"),
       },
     ],
   },

@@ -11,7 +11,6 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 import "animate.css";
 
-
 //Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
@@ -52,10 +51,10 @@ const Noir = definePreset(Aura, {
       },
       dark: {
         primary: {
-          color: "{stone.50}",
-          inverseColor: "{stone.950}",
-          hoverColor: "{stone.100}",
-          activeColor: "{stone.200}",
+          color: "{zinc.50}",
+          inverseColor: "{zinc.950}",
+          hoverColor: "{zinc.100}",
+          activeColor: "{zinc.200}",
         },
         highlight: {
           background: "rgba(250, 250, 250, .16)",
@@ -79,6 +78,7 @@ createApp(App)
       options: {
         prefix: "p",
         darkModeSelector: ".my-app-dark",
+        cssLayer: false,
       },
     },
   })

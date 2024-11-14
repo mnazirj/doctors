@@ -42,17 +42,16 @@
               :href="link.route"
               class="list-group-item border-0 ms-4 me-2 rounded mb-2"
               :class="[
-                { active: $route.matched[0].children[0].path == link.route },
-                { hover: $route.matched[0].children[0].path != link.route },
+                { active: $route.name == link.prefix },
+                { hover: $route.name != link.prefix },
                 {
-                  'text-dark-emphasis':
-                    $route.matched[0].children[0].path != link.route,
+                  'text-dark-emphasis': $route.name != link.prefix,
                 },
               ]"
               data-bs-parent="#sidebar"
             >
               <i :class="link.icon" class="me-2"></i>
-              <span>{{ link.name }}</span>
+              <span class="font-kanit">{{ link.name }}</span>
             </a>
 
             <div class="mt-auto">
@@ -99,42 +98,49 @@ export default {
           name: "Dashboard",
           route: "home",
           icon: "fas fa-shapes",
+          prefix: "doc.home",
         },
         {
           id: 2,
           name: "Appointments",
           route: "appointments",
           icon: "fas fa-address-book",
+          prefix: "doc.appointments",
         },
         {
           id: 3,
           name: "Available Timings",
           route: "available-time",
           icon: "fas fa-calendar-check",
+          prefix: "doc.availabletime",
         },
         {
           id: 4,
           name: "My Patients",
           route: "patients",
           icon: "fas fa-hospital-user",
+          prefix: "doc.patients",
         },
         {
           id: 5,
           name: "Reviews",
           route: "reviews",
           icon: "fas fa-bullhorn",
+          prefix: "doc.reviews",
         },
         {
           id: 6,
           name: "Profile Settings",
           route: "profile",
           icon: "fas fa-address-card",
+          prefix: "doc.profile",
         },
         {
           id: 7,
           name: "Change Password",
           route: "password",
           icon: "fas fa-key",
+          prefix: "doc.password",
         },
       ],
     };
