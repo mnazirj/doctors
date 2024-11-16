@@ -1,7 +1,3 @@
-<script setup>
-import Button from "primevue/button";
-</script>
-
 <template>
   <nav class="navbar navbar-expand-lg bg-light sticky-top py-3" id="main-nav">
     <div class="container">
@@ -50,7 +46,7 @@ import Button from "primevue/button";
       </div>
       <div class="float-end">
         <Button
-          @click="toggleDarkMode"
+          @click="toggle()"
           icon="pi pi-user"
           as="router-link"
           to="/"
@@ -63,8 +59,10 @@ import Button from "primevue/button";
   </nav>
 </template>
 
-<script>
-function toggleDarkMode() {
+<script setup>
+import Button from "primevue/button";
+
+function toggle() {
   document.documentElement.classList.toggle("my-app-dark");
 }
 </script>

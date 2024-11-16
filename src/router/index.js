@@ -58,8 +58,7 @@ const routes = [
       {
         path: "specialities",
         name: "admin.specialities",
-        component: () =>
-          import("@/components/dashboard/admin/Specialities.vue"),
+        component: () => import("@/components/dashboard/admin/Specialities.vue"),
         meta: {
           breadcrumb:{
             name: "Specialities",
@@ -141,12 +140,28 @@ const routes = [
     path: "/doctor/dashboard",
     name: "dashboard",
     component: () => import("@/views/dashboard/doctor/DashboardView.vue"),
-
     children: [
       {
         path: "home",
         name: "doc.home",
         component: () => import("@/components/dashboard/doctor/Summary.vue"),
+      },
+      {
+        path: "appointments",
+        name: "doc.appointments",
+        component: () =>
+          import("@/components/dashboard/doctor/appointments.vue"),
+      },
+      {
+        path: "available-time",
+        name: "doc.availabletime",
+        component: () =>
+          import("@/components/dashboard/doctor/available-timing.vue"),
+      },
+      {
+        path: "patients",
+        name: "doc.patients",
+        component: () => import("@/components/dashboard/doctor/patients.vue"),
       },
     ],
   },
