@@ -6,23 +6,25 @@
       >
         <!-- First card -->
        
-        <Card class="card-1" :card="{name:'Doctors' ,number : 168 , iconClass:'pi-users' , maxNumber: 400}" />
+        <Card  :card="{name:'Doctors' ,number : 168 , iconClass:'fa-solid fa-user-doctor' , maxNumber: 400}" />
         <!-- Second Card -->
-        <Card class="card-2" :card="{name:'Appointments' ,number : 265 , iconClass:'pi-calendar-clock' , maxNumber: 400}" />
+        <Card  :card="{name:'Appointments' ,number : 265 , iconClass:'pi pi-calendar-clock' , maxNumber: 400}" />
         <!-- Third card -->
-        <Card class="card-3" :card="{name:'Total Reviews' ,number : 2.9 , iconClass:'pi-star' , maxNumber: 5}" />
+        <Card  :card="{name:'Total Reviews' ,number : 2.9 , iconClass:'pi pi-star' , maxNumber: 5}" />
         <!-- Fourth card -->
-        <Card class="card-4" :card="{name:'Patients' ,number : 300 , iconClass:'pi-user' , maxNumber: 400}" />
+        <Card  :card="{name:'Patients' ,number : 300 , iconClass:'fa-solid fa-user-injured' , maxNumber: 400}" />
        
       </div>
       <!-- End cards -->
 
         <!-- Charts -->
-      <div class="charts w-100 d-flex justify-content-around flex-wrap mt-3 mb-3">
-          <ChartHome />
-        </div>
+      <div class="charts w-100 d-flex justify-content-around flex-wrap mt-4 mb-4">
+        <h3 class="w-100">Weekly OverView</h3>
+        <ChartHome />
+      </div>
         <!-- end Charts -->
       <!-- Tables -->
+       
         <TableHome/>
         <!-- end Tables -->
 </template>
@@ -48,3 +50,7 @@ export default {
   
 };
 </script>
+
+<style scoped>
+
+</style>

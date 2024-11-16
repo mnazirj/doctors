@@ -59,14 +59,23 @@ export default {
     }
   },
   computed: {
+    // calculate number of pages by (total number of rows / number of row per page)
+    // Example: we have array contains 100 item and we want display 10 item per page  (100/10 = 10 pages)
     totalPages() {
       return Math.ceil(this.data.length / this.itemsPerPage);
     },
+
+    // divied total items into arrays
     paginatedData() {
+      // take page we stand on it (after subtract 1) * item per page ex(2-1*10 => 1* 10 = 10) and this is start point  
       let start = (this.currentPage - 1) * this.itemsPerPage;
+      // end point set by add on start point number of item per page ex(10 + 10 = 20) and this is end point
       let end = start + this.itemsPerPage;
+      // we sliced main data array from start point to end point and return this slice
       return this.data.slice(start, end);
     },
+
+    //  this method to set a array and this array contains all number pages and even '...' (what display in pagination)
     paginationPages() {
       let pages = [];
       if(this.totalPages === 1){
@@ -103,23 +112,28 @@ export default {
     },
   },
   methods: {
+    // when press Prevent page (this method fired) and we subtract from current page 1
     prevPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
       }
     },
+    // when press Next page (this method fired) and we add on current page 1
     nextPage() {
       if (this.currentPage < this.totalPages) {
         this.currentPage++;
       }
     },
+    //  when we press on a number of page (this method fired) and page in current page to display it.
     goToPage(page) {
       if (page !== "...") {
+        // while we are not pressing on '...' we put page in cureent page
         this.currentPage = page;
       }
     },
   },
   watch: {
+    // watch if there any change from perant
     paginatedData(newValue) {
       this.$emit("updatePaginatedData", newValue);
     },

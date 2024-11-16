@@ -1,19 +1,21 @@
 <template>
-     <div class="card m-1 mt-2 mb-2 p-1 shadow shadow-2">
-          <div
-            class="card-body d-flex justify-content-between align-items-center flex-wrap"
-          >
-            <i :class="{ pi: true, [card.iconClass]: !!card.iconClass }"></i>
+    <div class="card m-1 mt-2 mb-2 p-1 shadow shadow-2">
+        <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
+            <i :class="{[card.iconClass]: !!card.iconClass }"></i>
             <span>{{ card.number }}</span>
-            <div class="mt-2 d-flex flex-wrap w-100">
-              <label for="doctors-num" class="form-label w-100">{{ card.name }}</label>
-              <progress
-                :value="card.number"
-                :max="card.maxNumber"
-                name="doctors-num"
-                class="w-100"
-              ></progress>
+            <div class="w-100 m-1 mt-2">
+                <p class="text-center">{{ card.name }}</p>
             </div>
+            
+             <!-- <div class="mt-2 d-flex flex-wrap w-100">
+                <label for="doctors-num" class="form-label w-100 text-center">{{ card.name }}</label>
+                 <progress
+                    :value="card.number"
+                    :max="card.maxNumber"
+                    name="doctors-num"
+                    class="w-100">
+                </progress> 
+            </div>  -->
           </div>
         </div>
 </template>
@@ -59,10 +61,11 @@ export default {
     
 }
 .card {
-   height:10rem;
+    height:8rem;
 }
 .card i{
-   font-size: 4rem;
+    font-size: 4rem;
+    color: #2563eb !important;
 }
 .card span {
     font-size: 2rem;
@@ -75,14 +78,14 @@ export default {
     background: lightblue;
     border: none;
     border-radius: 20px;
-  }
-  
+}
+
 .card progress::-webkit-progress-value {
     background: rgb(0, 58, 85);
     border: none;
     border-radius: 7px; 
-  }
-  
+}
+
 .card progress::-webkit-progress-bar {  
     background: rgb(218, 218, 218);
     border: none;

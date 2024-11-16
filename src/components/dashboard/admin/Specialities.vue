@@ -1,54 +1,66 @@
 <template>
-    <div class="w-100 d-flex justify-content-end align-items-center p-1 pe-4 me-4">
-        <button class="btn btn-success m-1 me-4" title="Add Speciality" data-bs-toggle="modal" data-bs-target="#add-modal">+</button>
-        <div class="modal fade" id="add-modal" tabindex="-1">
-            <div class=" modal-dialog modal-dialog-centered">
-                <div class=" modal-content ">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="head-text-modal">Create Speciality</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class=" modal-body">
-                        <form action="">
-                            <div class="mb-4">
-                                <input type="text" class=" form-control" id="speciality-name" placeholder="Speciality Name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="speciality-logo" class=" form-label">Sepciality Logo</label>
-                                <input class="form-control" type="file" id="speciality-logo">
-                            </div>
-                        </form>
-                    </div>
-                    <div class=" modal-footer d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary w-75" data-bs-dismiss="modal">Create</button>
+    <div class="table-continer w-100   d-flex flex-wrap justify-content-center align-content-center pb-1 pt-1 mt-1 mb-1">
+        <div class="w-100 d-flex justify-content-between">
+            <div class="d-flex justify-content-end align-items-center w-75 mt-1 mb-3">
+                <div class="w-66 input-group">
+                    <span class="input-group-text"><i class="pi pi-search fs-4 text-main-color"></i></span>
+                    <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
+                </div>
+        </div>
+        <!-- button create -->
+        <div class="w-25 d-flex justify-content-end mt-1 mb-3">
+        <button class="btn btn-main white-space-nowrap" title="Create a new speciality" data-bs-toggle="modal" data-bs-target="#add-speciality-modal">
+            <i class="pi pi-plus me-1"></i>Create
+        </button>
+            <!-- modal create -->
+            <div class="modal fade" id="add-speciality-modal" tabindex="-1">
+                <div class=" modal-dialog modal-dialog-centered">
+                    <div class=" modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="head-text-modal">Create Speciality</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class=" modal-body">
+                            <form action="">
+                                <div class="mb-4 input-group">
+                                    <span class="input-group-text rounded-start-2" ><i class="fa-solid fa-pen text-main-color"></i></span>
+                                    <input type="text" class=" form-control" id="speciality-name" placeholder="Speciality Name">
+                                </div>
+                                <div class="mb-3 input-group">
+                                    <label for="speciality-logo" class=" form-label w-100">Sepciality Logo</label>
+                                    <input class="form-control rounded-start-2" type="file" id="speciality-logo">
+                                    <span class="input-group-text rounded-end-2" ><i class="fa-solid fa-file-arrow-up text-main-color"></i></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class=" modal-footer d-flex justify-content-end">
+                            <button type="button" class="btn btn-main" data-bs-dismiss="modal">Create</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="table-continer sepc-table   d-flex flex-wrap justify-content-center align-content-center shadow shadow-3 ms-auto me-auto pt-4 pb-4 mt-4 mb-4 rounded rounded-4">
-        <div class="table-responsive">
+        </div>
+        
+        <div class="table-responsive w-100">
             <table class="table table-hover  ">
             <thead>
                 <tr class="">
                     <th scope="col">ID</th>
-                    <th scope="col" colspan="2">Specialitie Name</th>
+                    <th scope="col" colspan="2">Speciality Name</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider align-middle">
+            <tbody class="align-middle">
                 <tr v-for="speciality in paginatedData" :key="speciality.id">
                     <td>#{{ speciality.id }}</td>
-                    <td>
-                        <img :src="speciality.img" alt="speciality-image" class=""> 
-                        </td>
-                        <td><span>{{ speciality.name }}</span></td>
-                    <td>
+                    <td><img :src="speciality.img" alt="speciality-image" class=""></td>
+                    <td><span>{{ speciality.name }}</span></td>    
+                    <td class="text-center">
                         <!-- edit button -->
-                        <button type="button" class="btn btn-primary me-1 ms-1" title="Delete this Speciality" data-bs-toggle="modal" data-bs-target="#edit-modal"><i class="pi pi-pen-to-square"></i></button>
+                        <button type="button" class="btn btn-outline-main me-1 ms-1" title="Edit this Speciality" data-bs-toggle="modal" :data-bs-target="'#edit-modal-' + speciality.id"><i class="pi pi-pen-to-square"></i></button>
                             <!-- modal edit -->
-                            <div class="modal fade" id="edit-modal" tabindex="-1">
+                            <div class="modal fade" :id="'edit-modal-' + speciality.id" tabindex="-1">
                             <div class=" modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class=" modal-header">
@@ -57,35 +69,37 @@
                                     </div>
                                     <div class=" modal-body">
                                         <form action="">
-                                            <div class="mb-4">
+                                            <div class="mb-4 input-group">
+                                                <span class="input-group-text rounded-start-2"><i class="fa-solid fa-pen text-main-color"></i></span>
                                                 <input type="text" class=" form-control" id="speciality-name" placeholder="Speciality Name" :value="speciality.name">
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="speciality-logo" class=" form-label">Sepciality Logo</label>
-                                                <input class="form-control" type="file" id="speciality-logo">
+                                            <div class="mb-3 input-group">
+                                                <label for="speciality-logo" class=" form-label w-100">Sepciality Logo</label>
+                                                <input class="form-control rounded-start-2" type="file" id="speciality-logo">
+                                                <span class="input-group-text rounded-end-2"><i class="fa-solid fa-file-arrow-up text-main-color"></i></span>
                                             </div>
                                         </form>
                                     </div>
-                                    <div class=" modal-footer d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary w-75" data-bs-dismiss="modal">Update</button>
+                                    <div class=" modal-footer d-flex justify-content-end">
+                                        <button type="button" class="btn btn-main" data-bs-dismiss="modal">Update</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- delete button -->
-                        <button type="button" class="btn btn-danger me-1 ms-1" title="Edit this Speciality" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="pi pi-trash"></i></button>
+                        <button type="button" class="btn btn-outline-danger me-1 ms-1" title="Delete this Speciality" data-bs-toggle="modal" :data-bs-target="'#delete-modal-' + speciality.id"><i class="pi pi-trash"></i></button>
                             <!-- delete modal -->
-                            <div class=" modal fade" id="delete-modal" tabindex="-1">
+                            <div class=" modal fade" :id="'delete-modal-' + speciality.id" tabindex="-1">
                                 <div class=" modal-dialog modal-dialog-centered">
                                     <div class=" modal-content">
                                         <div class=" modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Speciality #{{ speciality.id }}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class=" modal-body d-flex justify-content-center align-items-center">
                                             <p>Are you sure deleting #{{ speciality.id }} speciality ?</p>
                                         </div>
-                                        <div class=" modal-footer d-flex justify-content-center">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <div class=" modal-footer d-flex justify-content-end">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
                                         </div>
                                     </div>
@@ -96,8 +110,7 @@
             </tbody>
         </table>
         </div>
-       <Pagination :data="specialities" :itemsPerPage="5" @updatePaginatedData="handlePaginatedDataUpdate" />
-       
+        <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
     </div>
 </template>
 
@@ -109,6 +122,7 @@ export default{
     },
     data() {
         return {
+            searchInput:'',
             paginatedData:[],
             specialities:[
                 {
@@ -136,11 +150,24 @@ export default{
                     name: "Ophthalmologists",
                     img:require('@/assets/images/homepage/6.svg'),
                 },
-               
             ],
         }
     },
+    computed:{
+        filteredData(){
+            if(!this.searchInput){
+                return this.specialities;
+            }
+            return this.specialities.filter((item)=> 
+                item.name.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                String(item.id).includes(this.searchInput)
+            );
+        }
+    },
     methods:{
+        resetToFirstPage(){
+            this.$refs.pagination.currentPage = 1;
+        },
         handlePaginatedDataUpdate(newPaginatedData){
             this.paginatedData = newPaginatedData;
         }
@@ -149,19 +176,7 @@ export default{
 </script>
 
 <style scoped>
-.table-continer div table tbody tr td:has(img)  {
-    text-align: end;
-}
-.table-continer div table tbody tr td:has(span)  {
-    text-align: start;
-}
-.table-continer div table tbody tr td img {
-    width: 3rem;
-    height: 3rem;
-}
-.table-continer div table tbody tr td span {
-    margin-left: 1rem;
-}
+
 .modal-body  {
     text-align: start;
 

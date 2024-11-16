@@ -1,11 +1,12 @@
 <template>
-   
-   
-    <div class="table-continer   d-flex flex-wrap justify-content-center align-content-center shadow shadow-3 ms-auto me-auto pt-4 pb-4 mt-4 mb-4 rounded rounded-4">
-        <div class="d-flex justify-content-center align-items-center w-100 mt-3 mb-3">
+    <div class="table-continer w-100   d-flex flex-wrap justify-content-center align-content-center pb-1 pt-1 mt-1 mb-1">
+        <!-- Search -->
+        <div class="d-flex justify-content-center align-items-center w-50 mt-1 mb-3 input-group">
+            <span class="input-group-text"><i class="pi pi-search fs-4 text-main-color"></i></span>
             <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
         </div>
-        <div class="table-responsive">
+        <!-- table -->
+        <div class="table-responsive w-100">
             <table class="table table-hover  ">
             <thead>
                 <tr class="">
@@ -17,7 +18,7 @@
                     <th class="">Actions</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider align-middle">
+            <tbody class="align-middle">
                 <tr v-for="appointment in paginatedData" :key="appointment.id">
                     <td>{{ appointment.patientName }}</td>
                     <td>{{ appointment.doctorName }}</td>
@@ -25,14 +26,33 @@
                     <td>{{ appointment.date }}</td>
                     <td><i :class="['pi pi-circle-fill', appointment.status ? 'text-success' : 'text-danger']"></i></td>
                     <td>
-                        <button type="button" class="btn btn-primary me-1 ms-1"><i class="pi pi-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger me-1 ms-1"><i class="pi pi-trash"></i></button>
+                        <!-- <button type="button" class="btn btn-primary me-1 ms-1"><i class="pi pi-pen-to-square"></i></button> -->
+                        <!-- delete button -->
+                        <button type="button" class="btn btn-outline-danger me-1 ms-1" data-bs-toggle="modal" :data-bs-target="'#delete-appointment-modal-'+ appointment.id" title="Delete this Appointment"><i class="pi pi-trash"></i></button>
+                            <!-- delete modal -->
+                            <div class=" modal fade" :id="'delete-appointment-modal-'+appointment.id" tabindex="-1">
+                                <div class=" modal-dialog modal-dialog-centered">
+                                    <div class=" modal-content">
+                                        <div class=" modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Appointment #{{ appointment.id }}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class=" modal-body d-flex justify-content-center align-items-center">
+                                            <p>Are you sure deleting #{{ appointment.id }} appointment ?</p>
+                                        </div>
+                                        <div class=" modal-footer d-flex justify-content-end">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </td>
                 </tr>
             </tbody>
         </table>
         </div>
-       <Pagination :data="filteredData" :itemsPerPage="5" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
+        <!-- Pagination -->
+       <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
        
     </div>
 </template>
@@ -301,22 +321,30 @@ export default{
     },
     computed:{
         filteredData(){
+            // condtion if search input is empty return all data
             if(!this.searchInput){
                 return this.appointments;
             }
+            // filter appoinments by (patient name , doctor name , speciality , date , status)
+            // take every value from appointment (after convert it to lower case) then we show if this value contains what writed in search input (after convert it to lower case) then return array (contains data which include what writed search input value)
             return this.appointments.filter((item)=> 
                 item.patientName.toLowerCase().includes(this.searchInput.toLowerCase()) ||
                 item.doctorName.toLowerCase().includes(this.searchInput.toLowerCase()) ||
                 item.specialitie.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                // convert data into string (becuse mabye it will be time type)
                 String(item.date).includes(this.searchInput) ||
                 String(item.status).includes(this.searchInput)
             );
         }
     },
     methods:{
+        // when search to set page number 1
         resetToFirstPage(){
             this.$refs.pagination.currentPage = 1;
         }, 
+
+        // to set page number x data in variable[array contains rows for this page] (table view this variable).
+        //  Example : when we turn to page 2 (this method fired) and we put in variable paginatiedData new rows to display them. 
         handlePaginatedDataUpdate(newPaginatedData){
             this.paginatedData = newPaginatedData;
         }

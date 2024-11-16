@@ -111,6 +111,93 @@ export default {
 </script>
 
 <style scoped>
+#navbar{
+    height: 4rem;
+    min-width: 4rem;
+    top: 0;
+    left: 0;
+}
 
+.dropdown-profile .dropdown-menu {
+    width: 8rem !important;
+    --bs-dropdown-min-width:8rem !important;
+    margin-right: 4rem !important;
+}
+.dropdown-profile .dropdown-menu[data-bs-popper] {
+    top: 108%;
+    left: -34px !important;
+}
+.dropdown-profile .dropdown-menu .dropdown-item {
+    margin: .4rem 0px;
+    color: #004f74 ;
+}
+.dropdown-profile .dropdown-menu .dropdown-item a{
+    color: inherit ;
+}
+.dropdown-profile .dropdown-item:focus, .dropdown-item:hover {
+    color: #0087c6 !important;
+}
+.dropdown-notfications .dropdown-menu {
+    width: 22rem;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+.dropdown-notfications .dropdown-menu[data-bs-popper] {
+    top: 118%;
+    left: -330px;
+}
+.dropdown-notfications .dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #dfdfdf;
+}
+.notfication-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.dropdown-item .text-content span {
+    font-size: 0.7rem;
+}
+.dropdown-item .text-content .notfication-message {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.nav-icon-user {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem !important;
+}
+.nav-image-user{
+    width: 3rem;
+    height: 3rem;
+}
+.notification i {
+    font-size: 1.5rem;
+    color: #0087c6;
+}
+/*.notification-number{
+     color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #0072a7;
+    position: absolute;
+    border: 1px solid ;
+    margin-left: 16px;
+    margin-top: -20px;
+    border-radius: 50%;
+    z-index: 1; 
+}*/
+.notification-number{
+    color: #f4f4f4;
+    background-color: #0072a7;
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 </style>

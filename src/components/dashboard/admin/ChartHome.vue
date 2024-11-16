@@ -45,25 +45,20 @@ export default {
 
       return {
         labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          " August",
-          "September",
-          "October",
-          "November",
-          "December",
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
         ],
         datasets: [
           {
             label: "Patients",
-            data: [80, 89, 112, 98, 120, 80, 70, 65, 50, 55, 80, 120],
+            data: [30, 45, 31, 32, 37, 10, 8],
             fill: true,
-            borderColor: documentStyle.getPropertyValue("--p-fuchsia-800"),
+            borderColor: documentStyle.getPropertyValue("--p-blue-600"),
             tension: 0.4,
           },
         ],
@@ -125,15 +120,15 @@ export default {
         datasets: [
           {
             label: "Doctors",
-            backgroundColor: documentStyle.getPropertyValue("--p-amber-400"),
-            borderColor: documentStyle.getPropertyValue("--p-cyan-500"),
-            data: [25, 22, 24, 21, 21, 0, 18],
+            backgroundColor: documentStyle.getPropertyValue("--p-blue-600"),
+            borderColor: documentStyle.getPropertyValue("--p-blue-700"),
+            data: [25, 22, 24, 21, 21, 8, 10],
           },
           {
             label: "Appointments",
-            backgroundColor: documentStyle.getPropertyValue("--p-green-400"),
+            backgroundColor: documentStyle.getPropertyValue("--p-gray-400"),
             borderColor: documentStyle.getPropertyValue("--p-gray-500"),
-            data: [50, 48, 40, 45, 35, 0, 45],
+            data: [50, 48, 40, 45, 35, 10, 15],
           },
         ],
       };
