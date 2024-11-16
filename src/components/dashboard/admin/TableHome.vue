@@ -1,7 +1,6 @@
 <template>
-  <div class="mt-5 mb-2">
-    <h3 class="mb-2 mt-2">Last Paitents And Doctors</h3>
   <div class=" h-100 d-flex flex-wrap justify-content-between">
+    <!-- First Table (Doctors table) -->
     <div class="table-section  w-47 d-flex flex-column flex-wrap ">
       <span class="text-center w-100 mb-2 mt-1">Doctors List </span>
       <div class=" table-responsive w-100">
@@ -29,8 +28,9 @@
       </div>
       
     </div>
+    <!-- Second Table (Paitents table) -->
     <div class="table-section  w-47 d-flex flex-column flex-wrap ">
-      <span class="text-center w-100 mb-2 mt-1">Paitent List </span>
+      <span class="text-center w-100 mb-2 mt-1">Paitents List </span>
       <div class=" table-responsive w-100">
           <table class="table table-hover align-middle">
             <thead class="" >
@@ -54,8 +54,7 @@
       </div>
       
     </div>
-  </div>
-  </div>
+  </div>  
   
 </template>
 

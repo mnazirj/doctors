@@ -7,13 +7,13 @@
                     <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
                 </div>
         </div>
-        <!-- button create -->
+        <!-- Create button -->
         <div class="w-25 d-flex justify-content-end mt-1 mb-3">
-        <button class="btn btn-main white-space-nowrap" title="Create a new speciality" data-bs-toggle="modal" data-bs-target="#add-speciality-modal">
+        <button class="btn btn-main white-space-nowrap" title="Create a new speciality" data-bs-toggle="modal" data-bs-target="#create-speciality-modal">
             <i class="pi pi-plus me-1"></i>Create
         </button>
-            <!-- modal create -->
-            <div class="modal fade" id="add-speciality-modal" tabindex="-1">
+            <!-- Create modal -->
+            <div class="modal fade" id="create-speciality-modal" tabindex="-1">
                 <div class=" modal-dialog modal-dialog-centered">
                     <div class=" modal-content ">
                         <div class="modal-header">
@@ -41,9 +41,10 @@
             </div>
         </div>
         </div>
-        
+        <!-- Table -->
         <div class="table-responsive w-100">
             <table class="table table-hover  ">
+                <!-- table head -->
             <thead>
                 <tr class="">
                     <th scope="col">ID</th>
@@ -51,6 +52,7 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
+            <!-- table body -->
             <tbody class="align-middle">
                 <tr v-for="speciality in paginatedData" :key="speciality.id">
                     <td>#{{ speciality.id }}</td>
@@ -110,6 +112,7 @@
             </tbody>
         </table>
         </div>
+        <!-- Pagination -->
         <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
     </div>
 </template>
@@ -155,9 +158,12 @@ export default{
     },
     computed:{
         filteredData(){
+            // condtion if search input is empty return all data
             if(!this.searchInput){
                 return this.specialities;
             }
+            // filter speciality by (name ,id)
+            // take name (after convert it to lower case) id (after convert it to string) then we show if this value contains what writed in search input(.include) (after convert search input value to lower case) then return array (contains data which include what writed search input value)
             return this.specialities.filter((item)=> 
                 item.name.toLowerCase().includes(this.searchInput.toLowerCase()) ||
                 String(item.id).includes(this.searchInput)
@@ -165,9 +171,12 @@ export default{
         }
     },
     methods:{
+        // when search to set page number 1
         resetToFirstPage(){
             this.$refs.pagination.currentPage = 1;
         },
+        // to set page number x data in variable[array contains rows for this page] (table view this variable).
+        //  Example :if we was in page number 1 when we turn to page 2 (this method fired) and we put in variable paginatiedData new rows to display them. 
         handlePaginatedDataUpdate(newPaginatedData){
             this.paginatedData = newPaginatedData;
         }

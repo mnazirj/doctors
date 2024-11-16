@@ -5,8 +5,10 @@
             <span class="input-group-text"><i class="pi pi-search fs-4 text-main-color"></i></span>
             <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
         </div>
+        <!-- Table -->
         <div class="table-responsive w-100">
             <table class="table table-hover  ">
+                <!-- table head -->
             <thead>
                 <tr class="">
                     <th scope="col">ID</th>
@@ -18,6 +20,7 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
+            <!-- table body -->
             <tbody class="align-middle">
                 <tr v-for="paitent in paginatedData" :key="paitent.id">
                     <td>#{{ paitent.id }}</td>
@@ -28,6 +31,7 @@
                     <td>{{ paitent.phone }}</td>
                     <td>{{ paitent.lastVisit }}</td>
                     <td>
+                        <!-- edit button -->
                         <!-- <button type="button" class="btn btn-primary me-1 ms-1"><i class="pi pi-pen-to-square"></i></button> -->
                         <!-- delete button -->
                         <button type="button" class="btn btn-outline-danger me-1 ms-1" data-bs-toggle="modal" :data-bs-target="'#delete-paitent-modal-' + paitent.id" title="Delete this paitent"><i class="pi pi-trash"></i></button>
@@ -53,6 +57,7 @@
             </tbody>
         </table>
         </div>
+        <!-- Pagination -->
        <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
        
     </div>
@@ -150,22 +155,27 @@ export default{
             if(!this.searchInput){
                 return this.paitents;
             }
-             // filter paitent by (name , address , age , phone , date , status)
+             // filter paitent by (name , address , age , phone , date (last visit) , status)
             // take every value from paitent (after convert it to lower case) then we show if this value contains what writed in search input (after convert it to lower case) then return array (contains data which include what writed search input value)
             return this.paitents.filter((item)=> 
                 item.name.toLowerCase().includes(this.searchInput.toLowerCase()) ||
                 item.address.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+                // age is int we convert it to string
                 String(item.age).includes(this.searchInput)||
+                // phone is string have numbers so we dont need lower case
                 item.phone.includes(this.searchInput) ||
-                item.lastVisit.toLocaleLowerCase().includes(this.searchInput.toLowerCase()) ||
+                String(item.lastVisit).toLocaleLowerCase().includes(this.searchInput.toLowerCase()) ||
                 String(item.status).includes(this.searchInput)
             );
         }
     },
     methods:{
+        // when search to set page number 1
         resetToFirstPage(){
             this.$refs.pagination.currentPage = 1;
         },
+        // to set page number x data in variable[array contains rows for this page] (table view this variable).
+        //  Example :if we was in page number 1 when we turn to page 2 (this method fired) and we put in variable paginatiedData new rows to display them.
         handlePaginatedDataUpdate(newPaginatedData){
             this.paginatedData = newPaginatedData;
         }

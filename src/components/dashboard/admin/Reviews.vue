@@ -8,6 +8,7 @@
     <!-- Table -->
     <div class="table-responsive w-100">
       <table class="table table-hover">
+        <!-- table head -->
         <thead>
           <tr class="">
             <th scope="col" colspan="2">Paitent Name</th>
@@ -18,6 +19,7 @@
             <th scope="col">Actions</th>
           </tr>
         </thead>
+        <!-- table body -->
         <tbody class="align-middle">
           <tr v-for="review in paginatedData" :key="review.id">
             <td><img :src="review.paitentImg" alt="paitent-image" class="table-img"/></td>
@@ -88,6 +90,7 @@
         </tbody>
       </table>
     </div>
+    <!-- Pagination -->
     <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination"/>
   </div>
 </template>
@@ -259,6 +262,7 @@ export default {
         
     },
   methods: {
+    // this method to cut description if it greater than 5 word and put "..." to point there is complete to this description
     cutText(text){
       let newText = text;
       if(newText.split(' ').length > 5){
@@ -266,9 +270,12 @@ export default {
       }
       return newText;
     },
+    // when search to set page number 1
     resetToFirstPage(){
       this.$refs.pagination.currentPage = 1;
     },
+    // to set page number x data in variable[array contains rows for this page] (table view this variable).
+    //  Example :if we was in page number 1 when we turn to page 2 (this method fired) and we put in variable paginatiedData new rows to display them. 
     handlePaginatedDataUpdate(newPaginatedData) {
       this.paginatedData = newPaginatedData;
     },

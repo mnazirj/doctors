@@ -1,41 +1,17 @@
 <template>
-  <nav
-    aria-label="Page navigation example"
-    class="w-100 mt-3 mb-3 d-flex justify-content-center"
-  >
+  <nav aria-label="Page navigation example" class="w-100 mt-3 mb-3 d-flex justify-content-center">
     <ul class="pagination">
+      <!-- Pervious button -->
       <li class="page-item">
-        <button
-          type="button"
-          class="page-link"
-          @click="prevPage"
-          :disabled="currentPage === 1"
-        >
-          Previous
-        </button>
+        <button type="button" class="page-link" @click="prevPage" :disabled="currentPage === 1" > Previous</button>
       </li>
-      <li
-        :class="['page-item', { activePage: currentPage === page }]"
-        v-for="page in paginationPages"
-        :key="page"
-        @click="goToPage(page)"
-      >
-        <button
-          class="page-link"
-          :disabled="page === '...' || page == currentPage"
-        >
-          {{ page }}
-        </button>
+      <!-- pages number -->
+      <li :class="['page-item', { activePage: currentPage === page }]" v-for="page in paginationPages" :key="page" @click="goToPage(page)">
+        <button  class="page-link" :disabled="page === '...' || page == currentPage"> {{ page }} </button>
       </li>
+      <!-- Next button -->
       <li class="page-item">
-        <button
-          type="button"
-          class="page-link"
-          @click="nextPage"
-          :disabled="currentPage === totalPages"
-        >
-          Next
-        </button>
+        <button type="button" class="page-link" @click="nextPage" :disabled="currentPage === totalPages"> Next</button>
       </li>
     </ul>
   </nav>

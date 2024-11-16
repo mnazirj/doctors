@@ -7,17 +7,17 @@
                 <p class="text-center">{{ card.name }}</p>
             </div>
             
-             <!-- <div class="mt-2 d-flex flex-wrap w-100">
+            <!-- <div class="mt-2 d-flex flex-wrap w-100">
                 <label for="doctors-num" class="form-label w-100 text-center">{{ card.name }}</label>
-                 <progress
+                <progress
                     :value="card.number"
                     :max="card.maxNumber"
                     name="doctors-num"
                     class="w-100">
                 </progress> 
             </div>  -->
-          </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
                 name:"",
                 number:0,
                 iconClass:'',
-                maxNumber:0,
+                // maxNumber:0,
             })
         }
     },
@@ -86,12 +86,12 @@ export default {
     border-radius: 7px; 
 }
 
-.card progress::-webkit-progress-bar {  
+/* .card progress::-webkit-progress-bar {  
     background: rgb(218, 218, 218);
     border: none;
     border-radius: 7px;
-}
-.card-1 i{
+} */
+/* .card-1 i{
     color: #ffbb00;
 }
 .card-1 progress::-webkit-progress-value {
@@ -114,5 +114,5 @@ export default {
 }
 .card-4 progress::-webkit-progress-value {
     background: #8f004f;
-}
+} */
 </style>

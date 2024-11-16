@@ -9,13 +9,13 @@
                     <input type="text" name="search" id="search" class=" form-control search" placeholder="Search ..." v-model="searchInput" @input="resetToFirstPage">
                 </div>
             </div>
-        <!-- Add Button -->
+        <!-- Create Button -->
         <div class="w-25 d-flex justify-content-end mt-1 mb-3">
-            <button type="button" class="btn btn-main white-space-nowrap" data-bs-toggle="modal" data-bs-target="#add-btn-modal" title="Create a new Doctor">
+            <button type="button" class="btn btn-main white-space-nowrap" data-bs-toggle="modal" data-bs-target="#create-btn-modal" title="Create a new Doctor">
                 <i class="pi pi-plus me-1"></i>Create
             </button>
-            <!-- Modal Add -->
-            <div id="add-btn-modal" class=" modal fade" tabindex="-1">
+            <!-- Create Modal Add -->
+            <div id="create-btn-modal" class=" modal fade" tabindex="-1">
                 <div class=" modal-dialog modal-dialog-centered">
                     <div class=" modal-content">
                         <div class=" modal-header">
@@ -58,6 +58,7 @@
         <!-- Table -->
         <div class="table-responsive w-100">
             <table class="table table-hover  ">
+                <!-- table head -->
             <thead>
                 <tr class="">
                     <th scope="col" colspan="2">Doctor Name</th>
@@ -67,6 +68,7 @@
                     <th class="">Actions</th>
                 </tr>
             </thead>
+            <!-- table body -->
             <tbody class=" align-middle">
                 <tr v-for="doctor in paginatedData" :key="doctor.id">
                     <td><img :src="doctor.img" alt="doctor-image" class="table-img"></td>
@@ -77,6 +79,7 @@
                     <td class=" text-center">
                         <!-- Edit button -->
                         <button type="button" class="btn btn-outline-main me-1 ms-1" data-bs-toggle="modal" :data-bs-target="'#edit-btn-modal-'+ doctor.id" title="Edit This Doctor"><i class="pi pi-pen-to-square"></i></button>
+                        <!-- edit modal -->
                         <div :id="'edit-btn-modal-'+ doctor.id" class=" modal fade" tabindex="-1">
                             <div class=" modal-dialog modal-dialog-centered">
                                 <div class=" modal-content">
@@ -139,6 +142,7 @@
             </tbody>
         </table>
         </div>
+        <!-- Pagination -->
         <Pagination :data="filteredData" :itemsPerPage="10" @updatePaginatedData="handlePaginatedDataUpdate" ref="pagination" />
 
     </div>

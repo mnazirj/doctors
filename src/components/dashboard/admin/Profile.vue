@@ -8,6 +8,7 @@
                 </ul>
             </div>
                 -->
+            <!-- Select button (information and change password) -->
             <div class="w-100 d-flex justify-content-center" @click="showMeTheTruth">
                 <SelectButton v-model="activeTab" :options="tabs" optionLabel="value" dataKey="value" aria-labelledby="custom">
                     <template #option="slotProps">
@@ -17,8 +18,9 @@
                 </SelectButton>
             </div>
             
-            
+            <!-- Information Section -->
             <div v-if="activeTab.value === 'Personal information'" class="info-section  mt-3 mb-3 d-flex justify-content-center flex-wrap align-content-center collapse show ">
+                <!-- Profile Image -->
                 <div class="profile-image-container d-flex justify-content-center align-items-center flex-wrap  pt-2 pb-2 mt-3 mb-3 w-100 overflow-hidden relative"  > 
                     <div class="d-flex justify-content-center align-items-center" @mouseenter="isImageHovered = true" @mouseleave="isImageHovered = false" >
                         <i v-if="admin.img == null || admin.img == '' " class="pi pi-user d-flex justify-content-center align-items-center text-main-color"></i>
@@ -79,6 +81,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Admin Info -->
                 <div class=" white-space-nowrap table-responsive w-100 d-flex justify-content-center flex-wrap">
                     <div class="d-flex justify-content-center align-content-center mt-2 mb-1 w-75">
                         <p class="w-25 d-flex justify-content-end align-items-center m-1 me-3 text-muted">Name : </p>
@@ -103,6 +106,8 @@
                 </div>
                 
             </div>
+
+            <!-- Change Password Section -->
             <div v-if="activeTab.value === 'Change Password'" class="mt-3 mb-3 d-flex justify-content-center flex-wrap align-content-center w-100">
                 <form class="w-50 d-flex justify-content-center align-items-center flex-wrap">
                     <div class="mb-3 mt-3 w-100">
@@ -161,6 +166,7 @@ export default {
         }
     },
     methods:{
+        // this method to fire input when user click on edit icon (on profile image)
         triggerFileInput(){
             this.$refs.fileInput.click();
         },

@@ -1,19 +1,8 @@
 <template>
   <div class="chart-1">
-    <Chart
-      type="line"
-      :data="chartDataPatientsAnnually"
-      :options="chartOptionsPatientsAnnually"
-      class="h-100"
-    />
+    <Chart type="line" :data="chartDataPatientsAnnually" :options="chartOptionsPatientsAnnually" class="h-100"/>
   </div>
-  <div class="chart-2">
-    <Chart
-      type="bar"
-      :data="chartDataDoctorsAppointmentsDaily"
-      :options="chartOptionsDoctorsAppointmentsDaily"
-      class="h-100"
-    />
+  <div class="chart-2"> <Chart type="bar" :data="chartDataDoctorsAppointmentsDaily" :options="chartOptionsDoctorsAppointmentsDaily" class="h-100" />
   </div>
 </template>
 

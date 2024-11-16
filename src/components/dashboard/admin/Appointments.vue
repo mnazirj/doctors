@@ -8,6 +8,7 @@
         <!-- table -->
         <div class="table-responsive w-100">
             <table class="table table-hover  ">
+            <!-- table head -->
             <thead>
                 <tr class="">
                     <th scope="col">Patient Name</th>
@@ -18,6 +19,7 @@
                     <th class="">Actions</th>
                 </tr>
             </thead>
+            <!-- table body -->
             <tbody class="align-middle">
                 <tr v-for="appointment in paginatedData" :key="appointment.id">
                     <td>{{ appointment.patientName }}</td>
@@ -28,7 +30,7 @@
                     <td>
                         <!-- <button type="button" class="btn btn-primary me-1 ms-1"><i class="pi pi-pen-to-square"></i></button> -->
                         <!-- delete button -->
-                        <button type="button" class="btn btn-outline-danger me-1 ms-1" data-bs-toggle="modal" :data-bs-target="'#delete-appointment-modal-'+ appointment.id" title="Delete this Appointment"><i class="pi pi-trash"></i></button>
+                        <button type="button" class="btn btn-outline-danger rounded-circle me-1 ms-1" data-bs-toggle="modal" :data-bs-target="'#delete-appointment-modal-'+ appointment.id" title="Delete this Appointment"><i class="pi pi-trash"></i></button>
                             <!-- delete modal -->
                             <div class=" modal fade" :id="'delete-appointment-modal-'+appointment.id" tabindex="-1">
                                 <div class=" modal-dialog modal-dialog-centered">
