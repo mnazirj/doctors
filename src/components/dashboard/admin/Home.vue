@@ -13,7 +13,7 @@
         <!-- Charts -->
       <div class="charts w-100 d-flex justify-content-around flex-wrap mt-4 mb-4">
         <div class="title d-flex w-100 fs-2 text-main-color">
-          <span class="">Weekly OverView</span>
+          <span class="font-kanit">Weekly OverView</span>
           <div class="">
             <i class="fa-solid fa-chart-line ms-2"></i>
           </div>
@@ -24,7 +24,7 @@
       <!-- Tables -->
       <div>
         <div class="title d-flex w-100 fs-2 text-main-color">
-          <span class="">Last Patients and Doctors</span>
+          <span class="font-kanit">Last Patients and Doctors</span>
           <div class="">
             <i class="fa-solid fa-table ms-2"></i>
           </div>
@@ -51,8 +51,8 @@ export default {
 </script>
 
 <style scoped>
-.title div i{
+/* .title div i{
   position: absolute;
   top: -10;
-} 
+}  */
 </style>

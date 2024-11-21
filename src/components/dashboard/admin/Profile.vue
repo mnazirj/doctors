@@ -10,8 +10,8 @@
                 -->
             <!-- Select button (information and change password) -->
             <div class="w-100 d-flex justify-content-center" @click="showMeTheTruth">
-                <SelectButton v-model="activeTab" :options="tabs" optionLabel="value" dataKey="value" aria-labelledby="custom">
-                    <template #option="slotProps">
+                <SelectButton v-model="activeTab" :options="tabs" optionLabel="value" dataKey="value" aria-labelledby="custom" >
+                    <template #option="slotProps" >
                         <i :class="slotProps.option.icon"></i>
                         <span >{{ slotProps.option.value }}</span>
                     </template>

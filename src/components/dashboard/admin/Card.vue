@@ -1,11 +1,16 @@
 <template>
     <div class="card m-1 mt-2 mb-2 p-1 shadow shadow-2">
-        <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
-            <i :class="{[card.iconClass]: !!card.iconClass }"></i>
-            <span>{{ card.number }}</span>
-            <div class="w-100 m-1 mt-2">
-                <p class="text-center">{{ card.name }}</p>
+        <div class="card-body p-2 d-flex justify-content-between align-items-center flex-wrap">
+            <div class="w-30 d-flex justify-content-end">
+                <i :class="{[card.iconClass]: !!card.iconClass }"></i>
             </div>
+            <div class="w-66 h-100 d-flex flex-wrap flex-column justify-content-center align-items-center ">
+                <span class="label text-center ">{{ card.name }}</span>
+                <span class="number">{{ card.number }}</span>
+            </div>
+            
+            <!-- <div class="w-100 m-1 mt-2">
+            </div> -->
             
             <!-- <div class="mt-2 d-flex flex-wrap w-100">
                 <label for="doctors-num" class="form-label w-100 text-center">{{ card.name }}</label>
@@ -41,8 +46,8 @@ export default {
 <style scoped>
 @media  (max-width:786px) {
     .card{
-        width: 80%;
-        min-width: 80%;
+        width: 75%;
+        min-width: 75%;
     }
     
 }
@@ -64,17 +69,21 @@ export default {
     height:8rem;
 }
 .card i{
-    font-size: 4rem;
+    font-size: 3.2rem;
     color: #2563eb !important;
 }
-.card span {
-    font-size: 2rem;
+.card .number {
+    font-size: 1.5rem;
 }
-.card progress {
+
+.card .label {
+    font-size: 1rem;
+}
+/* .card progress {
     border: none;
     border-radius: 7px;   
-}
-.card progress::-moz-progress-bar {
+} */
+/* .card progress::-moz-progress-bar {
     background: lightblue;
     border: none;
     border-radius: 20px;
@@ -84,7 +93,7 @@ export default {
     background: rgb(0, 58, 85);
     border: none;
     border-radius: 7px; 
-}
+} */
 
 /* .card progress::-webkit-progress-bar {  
     background: rgb(218, 218, 218);
