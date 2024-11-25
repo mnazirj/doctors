@@ -362,7 +362,7 @@ a{
 
 /* End Settings */
 /* Mohammad Alqahf End Section */
-.border-color{
+.border-color, .p-fileupload-advanced{
     border: 2px solid var(--p-primary-color) !important;
 }
 .styled-img{
@@ -442,6 +442,7 @@ a{
         color: white !important;
         transition: .9s;
     }
+   
 }
 .outlined:hover:is(.not-hover-card){
     border: 2px solid !important;

@@ -26,10 +26,10 @@ const routes = [
     name: "dash.admin",
     component: () => import("@/views/dashboard/admin/DashboardView.vue"),
     meta: {
-      breadcrumb:{
+      breadcrumb: {
         name: "Dashboard",
         icon: "pi pi-th-large me-1",
-      }
+      },
     },
     children: [
       {
@@ -37,10 +37,10 @@ const routes = [
         name: "admin.home",
         component: () => import("@/components/dashboard/admin/Home.vue"),
         meta: {
-          breadcrumb:{
+          breadcrumb: {
             name: "Home",
             icon: "pi pi-home me-1",
-          }
+          },
         },
       },
       {
@@ -49,21 +49,22 @@ const routes = [
         component: () =>
           import("@/components/dashboard/admin/Appointments.vue"),
         meta: {
-          breadcrumb:{
-            name:"Appointments",
+          breadcrumb: {
+            name: "Appointments",
             icon: "pi pi-calendar-clock me-1",
-          } 
+          },
         },
       },
       {
         path: "specialities",
         name: "admin.specialities",
-        component: () => import("@/components/dashboard/admin/Specialities.vue"),
+        component: () =>
+          import("@/components/dashboard/admin/Specialities.vue"),
         meta: {
-          breadcrumb:{
+          breadcrumb: {
             name: "Specialities",
             icon: "fa-solid fa-stethoscope me-1",
-          }
+          },
         },
       },
       {
@@ -71,10 +72,10 @@ const routes = [
         name: "admin.doctors",
         component: () => import("@/components/dashboard/admin/Doctors.vue"),
         meta: {
-          breadcrumb:{
+          breadcrumb: {
             name: "Doctors",
             icon: "fa-solid fa-user-doctor me-1",
-          }
+          },
         },
       },
       {
@@ -82,10 +83,10 @@ const routes = [
         name: "admin.paitents",
         component: () => import("@/components/dashboard/admin/Patients.vue"),
         meta: {
-          breadcrumb:{
-            name:"Paitents",
+          breadcrumb: {
+            name: "Paitents",
             icon: "fa-solid fa-user-injured me-1",
-          } 
+          },
         },
       },
       {
@@ -93,46 +94,47 @@ const routes = [
         name: "admin.reviews",
         component: () => import("@/components/dashboard/admin/Reviews.vue"),
         meta: {
-          breadcrumb:{
-            name:"Reviews",
+          breadcrumb: {
+            name: "Reviews",
             icon: "pi pi-star-fill me-1",
-          } 
+          },
         },
       },
       {
-        path:'website-settings',
-        name:'admin.websitSettings',
-        component: ()=> import('@/components/dashboard/admin/WebsitSettings.vue'),
-        meta:{
+        path: "website-settings",
+        name: "admin.websitSettings",
+        component: () =>
+          import("@/components/dashboard/admin/WebsitSettings.vue"),
+        meta: {
           breadcrumb: {
-            name:'Website Settings',
+            name: "Website Settings",
             icon: "fa-solid fa-gears me-1",
-          }
-        }
+          },
+        },
       },
       {
-        path:'profile',
-        name:'admin.profile',
-        component: ()=> import('@/components/dashboard/admin/Profile.vue'),
-        meta:{
+        path: "profile",
+        name: "admin.profile",
+        component: () => import("@/components/dashboard/admin/Profile.vue"),
+        meta: {
           breadcrumb: {
-            name:'Profile',
+            name: "Profile",
             icon: "pi pi-address-book me-1",
-          }
-        }
+          },
+        },
       },
       {
-        path:'settings',
-        name:'admin.settings',
-        component: () => import('@/components/dashboard/admin/Settings.vue'),
-        meta:{
+        path: "settings",
+        name: "admin.settings",
+        component: () => import("@/components/dashboard/admin/Settings.vue"),
+        meta: {
           breadcrumb: {
-            name:'Settings',
+            name: "Settings",
             icon: "pi pi-cog me-1",
-          }
-        }
-      }
-    ]
+          },
+        },
+      },
+    ],
   },
 
   //Doctor Area
@@ -163,6 +165,16 @@ const routes = [
         name: "doc.patients",
         component: () => import("@/components/dashboard/doctor/patients.vue"),
       },
+      {
+        path: "reviews",
+        name: "doc.reviews",
+        component: () => import("@/components/dashboard/doctor/reviews.vue"),
+      },
+      {
+        path: "profile",
+        name: "doc.profile",
+        component: () => import("@/components/dashboard/doctor/profile.vue"),
+      },
     ],
   },
 ];
@@ -172,9 +184,9 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to,from,next)=>{
-  if(to.name == "dash.admin"){
-    next({name:'admin.home'});
+router.beforeEach((to, from, next) => {
+  if (to.name == "dash.admin") {
+    next({ name: "admin.home" });
   }
   next();
 });
