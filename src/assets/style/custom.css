@@ -89,7 +89,12 @@ a{
     z-index: -1;
 }
 
-
+.bg-doc{
+    background: linear-gradient(rgb(0,0,0,.9),rgb(0,0,0,.9)), url('../images/homepage/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:  no-repeat;
+}
 /* -------------------- */
 /* Mohammad Alqahf start Section */
 

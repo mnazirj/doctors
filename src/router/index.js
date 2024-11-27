@@ -177,6 +177,19 @@ const routes = [
       },
     ],
   },
+
+  //Auth Area
+  {
+    path: "/auth",
+    name: "auth",
+    children: [
+      {
+        path: "doctor",
+        name: "auth.doc",
+        component: () => import("@/components/auth/doctor/signin.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
