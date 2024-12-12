@@ -188,6 +188,29 @@ const routes = [
         name: "doc.patients",
         component: () => import("@/components/dashboard/doctor/patients.vue"),
       },
+      {
+        path: "reviews",
+        name: "doc.reviews",
+        component: () => import("@/components/dashboard/doctor/reviews.vue"),
+      },
+      {
+        path: "profile",
+        name: "doc.profile",
+        component: () => import("@/components/dashboard/doctor/profile.vue"),
+      },
+    ],
+  },
+
+  //Auth Area
+  {
+    path: "/auth",
+    name: "auth",
+    children: [
+      {
+        path: "doctor",
+        name: "auth.doc",
+        component: () => import("@/components/auth/doctor/signin.vue"),
+      },
     ],
   },
 ];
@@ -197,33 +220,5 @@ const router = createRouter({
   routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (to.path.includes("admin/dashboard")) {
-//     if (!localStorage.getItem("user-data")) {
-//       next({ name: "dash.login" });
-//     } else next();
-//   } else {
-//     next();
-//   }
-// if (to.path.includes("admin/dashboard")) {
-//   if (
-//     $store.state.LoginModule.user != null &&
-//     localStorage.getItem("user-data")
-//   ) {
-//     next();
-//   }
-//   if (to.name == "dash.admin") {
-//     next({ name: "admin.home" });
-//   }
-//   if (
-//     to.name == "dash.login" &&
-//     $store.state.LoginModule.user != null &&
-//     localStorage.getItem("user-data")
-//   ) {
-//     next({ name: "admin.home" });
-//   }
-// }
-// next();
-// });
 
 export default router;

@@ -135,13 +135,6 @@ export default {
           icon: "fas fa-address-card",
           prefix: "doc.profile",
         },
-        {
-          id: 7,
-          name: "Change Password",
-          route: "password",
-          icon: "fas fa-key",
-          prefix: "doc.password",
-        },
       ],
     };
   },
