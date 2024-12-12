@@ -4,8 +4,10 @@
   >
     <div class="w-100 d-flex justify-content-between">
       <!-- Search -->
-      <div class="d-flex justify-content-end align-items-center w-75 mt-1 mb-3">
-        <div class="w-66 input-group">
+      <div
+        class="d-flex flex-nowrap justify-content-center align-items-center w-full mt-1 mb-3"
+      >
+        <div class="search input-group">
           <span class="input-group-text"
             ><i class="pi pi-search fs-4 text-main-color"></i
           ></span>
@@ -13,7 +15,7 @@
             type="text"
             name="search"
             id="search"
-            class="form-control search"
+            class="form-control"
             placeholder="Search ..."
             v-model="searchInput"
             @input="resetToFirstPage"
@@ -21,7 +23,7 @@
         </div>
       </div>
       <!-- Create Button -->
-      <div class="w-25 d-flex justify-content-end mt-1 mb-3">
+      <div class="d-flex justify-content-end mt-1 mb-3">
         <button
           type="button"
           class="btn btn-main white-space-nowrap"
@@ -29,14 +31,14 @@
           data-bs-target="#create-btn-modal"
           title="Create a new Doctor"
         >
-          <i class="pi pi-plus me-1"></i>Create
+          <i class="pi pi-plus me-1"></i><span>Create</span>
         </button>
         <!-- Create Modal Add -->
         <div id="create-btn-modal" class="modal fade" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5>Create a doctor</h5>
+                <h1 class="modal-title font-kanit fs-5">Create a doctor</h1>
                 <button
                   type="button"
                   class="btn-close"
@@ -183,7 +185,9 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5>Edit doctor #{{ currentData.id }}</h5>
+            <h1 class="modal-title font-kanit fs-5">
+              Edit doctor #{{ currentData.id }}
+            </h1>
             <button
               type="button"
               class="btn-close"
@@ -269,7 +273,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title fs-5 font-kanit">
               Delete Doctor #{{ currentData.id }}
             </h1>
             <button

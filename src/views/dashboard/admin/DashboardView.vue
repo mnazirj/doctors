@@ -12,7 +12,7 @@
 
       <main ref="main" class="main col">
         <div
-          class="btn-toggle-continer d-flex justify-content-center align-items-center p-0 fixed"
+          class="btn-toggle-continer d-flex justify-content-center align-items-center p-0 fixed z-3"
         >
           <button
             type="button"
@@ -26,10 +26,10 @@
             <i class="pi pi-list mt-1"></i>
           </button>
         </div>
-        <div class="w-100 d-flex flex-wrap mb-2 align-items-center">
+        <div class="header w-100 d-flex flex-nowrap mb-2 align-items-center">
           <!-- Breadcrumb -->
           <nav
-            class="w-50 d-flex justify-content-around "
+            class="w-50 d-flex justify-content-around"
             style="--bs-breadcrumb-divider: '/'"
             aria-label="breadcrumb"
           >
@@ -37,9 +37,12 @@
               <li
                 v-for="(crumb, i) in breadcrumbs"
                 :key="i"
-                class="breadcrumb-item "
+                class="breadcrumb-item"
               >
-                <router-link class=" d-flex align-items-center flex-nowarp" :to="crumb.to">
+                <router-link
+                  class="d-flex align-items-center flex-nowarp"
+                  :to="crumb.to"
+                >
                   <i :class="crumb.icon"></i>
                   <span>{{ crumb.label }}</span>
                 </router-link>
@@ -47,7 +50,7 @@
             </ol>
           </nav>
           <!-- Languages Selector -->
-          <div class="w-47 d-flex justify-content-end">
+          <div class="w-50 d-flex justify-content-end">
             <FloatLabel class="w-fit" variant="on">
               <Select
                 v-model="selectedLang"
@@ -159,12 +162,39 @@ export default {
       }
     },
   },
+  mounted() {},
 };
 </script>
 
 <style scoped>
 ::v-deep a {
   color: inherit !important;
+}
+@media (max-width: 700px) {
+  #sidebar-container:is(.shown) + main .header {
+    flex-wrap: wrap !important;
+  }
+  #sidebar-container:is(.shown) + main .header nav {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  #sidebar-container:is(.shown) + main .header div {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 420px) {
+  #sidebar-container:not(.shown) + main .header {
+    flex-wrap: wrap !important;
+  }
+  #sidebar-container:not(.shown) + main .header nav {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  #sidebar-container:not(.shown) + main .header div {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 }
 /* Breadcrumb */
 .breadcrumb-item a:hover i {

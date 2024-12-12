@@ -4,7 +4,7 @@
   >
     <!-- Search -->
     <div
-      class="d-flex justify-content-center align-items-center w-50 mt-1 mb-3 input-group"
+      class="d-flex flex-nowrap justify-content-center align-items-center search mt-1 mb-3 input-group"
     >
       <span class="input-group-text"
         ><i class="pi pi-search fs-4 text-main-color"></i
@@ -13,7 +13,7 @@
         type="text"
         name="search"
         id="search"
-        class="form-control search"
+        class="form-control"
         placeholder="Search ..."
         v-model="searchInput"
         @input="resetToFirstPage"
@@ -90,10 +90,12 @@
     </div>
     <!-- Show modal -->
     <div id="show-review-modal" class="modal fade" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fs-5">Review #{{ currentData.id }}</h5>
+            <h1 class="modal-title font-kanit fs-5">
+              Review #{{ currentData.id }}
+            </h1>
             <button
               type="button"
               class="btn-close"
@@ -116,7 +118,9 @@
             </div>
             <div class="mt-1 mb-3 w-100">
               <span class="text-muted">Description : </span>
-              <span class="white-space-normal">{{ currentData.description }}</span>
+              <span class="white-space-normal">{{
+                currentData.description
+              }}</span>
             </div>
             <div class="mt-1 mb-3 w-100">
               <span class="text-muted">Date : </span>
@@ -131,7 +135,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title font-kanit fs-5">
               Delete Review #{{ currentData.id }}
             </h1>
             <button
@@ -183,16 +187,15 @@ export default {
     return {
       searchInput: "",
       paginatedData: [],
-      currentData:{
+      currentData: {
         id: null,
-          paitentName: null,
-          doctorName: null,
-          rate: null,
-          description:
-          null,
-          date: null,
-          doctorImg: null,
-          paitentImg: null,
+        paitentName: null,
+        doctorName: null,
+        rate: null,
+        description: null,
+        date: null,
+        doctorImg: null,
+        paitentImg: null,
       },
       reviews: [
         {
@@ -201,7 +204,7 @@ export default {
           doctorName: "Sara Alsrsara",
           rate: 5,
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat?",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime, illo numquam voluptates, possimus ab quae quos commodi, nam esse placeat iusto? Atque consequatur dignissimos, iure quo vel sunt placeat?",
           date: "11/12/2024 10:20 AM",
           doctorImg: require("@/assets//images//homepage/avatar-03.bcd54570.jpg"),
           paitentImg: require("@/assets/images/homepage/avatar-01.85a7d768.jpg"),
@@ -366,7 +369,7 @@ export default {
       }
       return newText;
     },
-    loadCurrentData(data){
+    loadCurrentData(data) {
       this.currentData = data;
     },
     // when search to set page number 1
@@ -378,9 +381,9 @@ export default {
     handlePaginatedDataUpdate(newPaginatedData) {
       this.paginatedData = newPaginatedData;
     },
-    deleteData(){
-      console.log("Deleting this : " ,this.currentData);
-    }
+    deleteData() {
+      console.log("Deleting this : ", this.currentData);
+    },
     /*createRate(rateNumber) {
       let fullStar = `<i class="fa-solid fa-star text-warning  full-star"></i>`;
       let halfStar = `<i class="fa-solid fa-star-half-stroke text-warning  half-star"></i>`;

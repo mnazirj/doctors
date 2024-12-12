@@ -3,8 +3,11 @@
     class="table-continer w-100 d-flex flex-wrap justify-content-center align-content-center pb-1 pt-1 mt-1 mb-1"
   >
     <div class="w-100 d-flex justify-content-between">
-      <div class="d-flex justify-content-end align-items-center w-75 mt-1 mb-3">
-        <div class="w-66 input-group">
+      <!-- Search -->
+      <div
+        class="d-flex flex-nowrap justify-content-center align-items-center w-full mt-1 mb-3"
+      >
+        <div class="search input-group">
           <span class="input-group-text"
             ><i class="pi pi-search fs-4 text-main-color"></i
           ></span>
@@ -12,7 +15,7 @@
             type="text"
             name="search"
             id="search"
-            class="form-control search"
+            class="form-control"
             placeholder="Search ..."
             v-model="searchInput"
             @input="resetToFirstPage"
@@ -20,21 +23,21 @@
         </div>
       </div>
       <!-- Create button -->
-      <div class="w-25 d-flex justify-content-end mt-1 mb-3">
+      <div class=" d-flex justify-content-end mt-1 mb-3">
         <button
           class="btn btn-main white-space-nowrap"
           title="Create a new speciality"
           data-bs-toggle="modal"
           data-bs-target="#create-speciality-modal"
         >
-          <i class="pi pi-plus me-1"></i>Create
+          <i class="pi pi-plus me-1"></i><span>Create</span>
         </button>
         <!-- Create modal -->
         <div class="modal fade" id="create-speciality-modal" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="head-text-modal">
+                <h1 class="modal-title font-kanit fs-5" id="head-text-modal">
                   Create Speciality
                 </h1>
                 <button
@@ -141,7 +144,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title font-kanit fs-5">
               Edit Speciality #{{ currentData.id }}
             </h1>
             <button
@@ -198,7 +201,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title font-kanit fs-5">
               Delete Speciality #{{ currentData.id }}
             </h1>
             <button

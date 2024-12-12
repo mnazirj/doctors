@@ -4,7 +4,7 @@
   >
     <!-- Search -->
     <div
-      class="d-flex justify-content-center align-items-center w-50 mt-1 mb-3 input-group"
+      class="d-flex flex-nowrap justify-content-center align-items-center search mt-1 mb-3 input-group"
     >
       <span class="input-group-text"
         ><i class="pi pi-search fs-4 text-main-color"></i
@@ -13,7 +13,7 @@
         type="text"
         name="search"
         id="search"
-        class="form-control search"
+        class="form-control"
         placeholder="Search ..."
         v-model="searchInput"
         @input="resetToFirstPage"
@@ -72,7 +72,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title font-kanit fs-5">
               Delete Paitent #{{ currentData.id }}
             </h1>
             <button

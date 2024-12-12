@@ -46,8 +46,8 @@ export default {
 <style scoped>
 @media  (max-width:786px) {
     .card{
-        width: 75%;
-        min-width: 75%;
+        width: 60%;
+        min-width: 60%;
     }
     
 }

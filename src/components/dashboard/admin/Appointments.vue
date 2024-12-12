@@ -71,7 +71,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title font-kanit fs-5">
               Delete Appointment #{{ currentData.id }}
             </h1>
             <button
